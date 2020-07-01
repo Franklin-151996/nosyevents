@@ -390,3 +390,47 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 1.2ms | Allocations: 4866)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2020-07-02 01:35:17 +0300
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iaRgpfUS3ZLQ1rmtvKkmH39ExiV921hOmVXpGplAV5bPDYEQlKAMW8FafcP0wPz7FwCHAOwB0L+U8SQOsz6A6A=="}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 845ms (ActiveRecord: 28.9ms | Allocations: 210021)
+
+
+Started GET "/" for ::1 at 2020-07-02 01:35:18 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 646)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 74.7ms | ActiveRecord: 0.0ms | Allocations: 11348)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:35:21 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 4.2ms | Allocations: 744)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 34.0ms | Allocations: 4205)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 70.9ms | ActiveRecord: 0.0ms | Allocations: 9365)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-07-02 01:35:34 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"6ns1XpsIMgNRxV5uwiuFr8yYgnX2CTzPQhfMkdHUstdoZCm0GaE9Cb3Wi6XmOlAMlY+7wg/qXkzYqDM7MA3L7g==", "user"=>{"email"=>"fr@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fr@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 475ms (ActiveRecord: 1.5ms | Allocations: 6303)
+
+
+Started GET "/" for ::1 at 2020-07-02 01:35:34 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 1054)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 36.6ms | ActiveRecord: 7.5ms | Allocations: 4879)
+
+
