@@ -12,4 +12,21 @@
  *
  *= require_tree .
  *= require_self
- */
+
+*= require bootstrap/css/bootstrap.min
+*= require fonts/font-awesome-4.7.0/css/font-awesome.min
+*= require fonts/iconic/css/material-design-iconic-font.min
+*= require animate/animate
+*= require css-hamburgers/hamburgers.min
+*= require animsition/css/animsition.min
+*= require select2/select2.min
+*= require daterangepicker/daterangepicker
+*= require css/util
+*= require css/main
+*/
+
+
+
+	
+
+
