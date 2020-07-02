@@ -390,3 +390,1566 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 1.2ms | Allocations: 4866)
 
 
+Started GET "/" for ::1 at 2020-07-02 01:44:41 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 98.1ms | Allocations: 13161)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 208ms (Views: 169.4ms | ActiveRecord: 14.5ms | Allocations: 23272)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-07-02 01:44:49 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6Ilt2Ej90gL6v9fUAl3fxXYcJj5URBRSx5EUXoTk/JQRAa7Z4FeS5B8D4cpS8Iq4Yl+NuUtV2+zJ+qMkUDtsTw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 499ms (ActiveRecord: 0.7ms | Allocations: 198321)
+
+
+Started GET "/" for ::1 at 2020-07-02 01:44:50 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 197)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 4012)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:44:56 +0300
+Processing by Devise::SessionsController#new as HTML
+Started GET "/users/images/icons/favicon.ico" for ::1 at 2020-07-02 01:44:56 +0300
+  Rendering users/sessions/new.html.erb within layouts/application
+  
+ActionController::RoutingError (No route matches [GET] "/users/images/icons/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  Rendered users/shared/_links.html.erb (Duration: 11.8ms | Allocations: 6090)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 168.1ms | Allocations: 51334)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 260ms (Views: 256.9ms | ActiveRecord: 0.0ms | Allocations: 63282)
+
+
+Started GET "/" for ::1 at 2020-07-02 01:48:56 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 72.0ms | ActiveRecord: 0.0ms | Allocations: 10766)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:48:59 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 3.0ms | Allocations: 751)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 417.2ms | Allocations: 198534)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 523ms (Views: 437.9ms | ActiveRecord: 13.6ms | Allocations: 214958)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:49:51 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.2ms | Allocations: 194)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1182)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 5274)
+
+
+Started GET "/users/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-02 01:49:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:50:26 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.2ms | Allocations: 197)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1206)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.0ms | Allocations: 5340)
+
+
+Started GET "/users/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-02 01:50:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:52:47 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 3.4ms | Allocations: 612)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 2134)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 62.5ms | ActiveRecord: 0.0ms | Allocations: 7707)
+
+
+Started GET "/users/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-02 01:52:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:52:56 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.2ms | Allocations: 194)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 18.0ms | Allocations: 1184)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 0.0ms | Allocations: 5262)
+
+
+Started GET "/users/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-02 01:52:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2020-07-02 01:53:08 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 194)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1177)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 0.0ms | Allocations: 5251)
+
+
+Started GET "/users/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-02 01:53:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-02 01:53:16 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 359)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 4830)
+
+
+Started GET "/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-02 01:53:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2020-07-02 01:53:20 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 220)
+  Rendered users/shared/_links.html.erb (Duration: 1.6ms | Allocations: 177)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 19.7ms | Allocations: 2813)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 43.5ms | ActiveRecord: 0.0ms | Allocations: 7558)
+
+
+Started GET "/users/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-02 01:53:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2020-07-02 01:54:58 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/shared/_links.html.erb (Duration: 1.2ms | Allocations: 137)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 1628)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.0ms | Allocations: 5645)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-02 01:57:14 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 212)
+  Rendered users/shared/_links.html.erb (Duration: 2.4ms | Allocations: 555)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 19.8ms | Allocations: 3030)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.0ms | Allocations: 8478)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-02 01:59:49 +0300
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 8.5ms | Allocations: 222)
+  Rendered users/shared/_links.html.erb (Duration: 2.9ms | Allocations: 660)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 552.7ms | Allocations: 199484)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 741ms (Views: 615.4ms | ActiveRecord: 18.7ms | Allocations: 220093)
+
+
+Started GET "/" for ::1 at 2020-07-02 02:00:25 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.0ms | Allocations: 5243)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 02:00:27 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 156)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 5343)
+
+
+Started GET "/" for ::1 at 2020-07-02 02:17:07 +0300
+  [1m[35m (41.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 436ms (Views: 366.8ms | ActiveRecord: 0.0ms | Allocations: 25813)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 02:17:11 +0300
+Started GET "/users/images/icons/favicon.ico" for ::1 at 2020-07-02 02:17:11 +0300
+Processing by Devise::SessionsController#new as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/users/images/icons/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 14.4ms | Allocations: 973)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2083.9ms | Allocations: 232799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2544ms (Views: 2185.5ms | ActiveRecord: 298.5ms | Allocations: 279136)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 02:19:36 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 3.2ms | Allocations: 756)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 520.6ms | Allocations: 198823)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 669ms (Views: 562.8ms | ActiveRecord: 13.5ms | Allocations: 219579)
+
+
+Started GET "/" for ::1 at 2020-07-02 02:29:05 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 666)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 0.0ms | Allocations: 19621)
+
+
+  
+ActionView::Template::Error (Unmatched double quote: "require select2.min.css\">"):
+  
+/usr/lib/ruby/2.5.0/shellwords.rb:84:in `block in shellsplit'
+/usr/lib/ruby/2.5.0/shellwords.rb:82:in `scan'
+/usr/lib/ruby/2.5.0/shellwords.rb:82:in `shellsplit'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:147:in `block in extract_directives'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:145:in `each'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:145:in `each_with_index'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:145:in `extract_directives'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:122:in `process_source'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:83:in `_call'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.0.2) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.0.2) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.0.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.0.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/promise.rb:563:in `block in realize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:353:in `run_task'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:342:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `loop'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `catch'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `block in create_worker'
+Started GET "/" for ::1 at 2020-07-02 02:32:11 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 363)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.0ms | Allocations: 4640)
+
+
+  
+ActionView::Template::Error (Unmatched double quote: "require select2.min.css\">"):
+  
+/usr/lib/ruby/2.5.0/shellwords.rb:84:in `block in shellsplit'
+/usr/lib/ruby/2.5.0/shellwords.rb:82:in `scan'
+/usr/lib/ruby/2.5.0/shellwords.rb:82:in `shellsplit'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:147:in `block in extract_directives'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:145:in `each'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:145:in `each_with_index'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:145:in `extract_directives'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:122:in `process_source'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:83:in `_call'
+sprockets (4.0.2) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.0.2) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.0.2) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.0.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.0.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/promise.rb:563:in `block in realize'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:353:in `run_task'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:342:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `loop'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `catch'
+concurrent-ruby (1.1.6) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `block in create_worker'
+Started GET "/" for ::1 at 2020-07-02 02:32:36 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 180)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 3979)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap.min.css' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /home/franklin/Documents/nosyevents/vendor/assets/css
+  /home/franklin/Documents/nosyevents/vendor/assets/fonts
+  /home/franklin/Documents/nosyevents/vendor/assets/images
+  /home/franklin/Documents/nosyevents/vendor/assets/js
+  /home/franklin/Documents/nosyevents/vendor/assets/vendor
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for ::1 at 2020-07-02 02:34:35 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 173)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 3922)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap.min.css' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /home/franklin/Documents/nosyevents/vendor/assets/css
+  /home/franklin/Documents/nosyevents/vendor/assets/fonts
+  /home/franklin/Documents/nosyevents/vendor/assets/images
+  /home/franklin/Documents/nosyevents/vendor/assets/js
+  /home/franklin/Documents/nosyevents/vendor/assets/vendor
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for ::1 at 2020-07-02 02:35:46 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 173)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 3926)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap.min.css' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /home/franklin/Documents/nosyevents/vendor/assets/css
+  /home/franklin/Documents/nosyevents/vendor/assets/fonts
+  /home/franklin/Documents/nosyevents/vendor/assets/images
+  /home/franklin/Documents/nosyevents/vendor/assets/js
+  /home/franklin/Documents/nosyevents/vendor/assets/vendor
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for ::1 at 2020-07-02 02:35:51 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 172)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 3918)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap.min.css' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /home/franklin/Documents/nosyevents/vendor/assets/css
+  /home/franklin/Documents/nosyevents/vendor/assets/fonts
+  /home/franklin/Documents/nosyevents/vendor/assets/images
+  /home/franklin/Documents/nosyevents/vendor/assets/js
+  /home/franklin/Documents/nosyevents/vendor/assets/vendor
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for ::1 at 2020-07-02 02:36:27 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 172)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 3921)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap.min.css' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /home/franklin/Documents/nosyevents/vendor/assets/css
+  /home/franklin/Documents/nosyevents/vendor/assets/fonts
+  /home/franklin/Documents/nosyevents/vendor/assets/images
+  /home/franklin/Documents/nosyevents/vendor/assets/js
+  /home/franklin/Documents/nosyevents/vendor/assets/vendor
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for ::1 at 2020-07-02 02:37:12 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 172)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 3921)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap.min.css' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /home/franklin/Documents/nosyevents/vendor/assets/css
+  /home/franklin/Documents/nosyevents/vendor/assets/fonts
+  /home/franklin/Documents/nosyevents/vendor/assets/images
+  /home/franklin/Documents/nosyevents/vendor/assets/js
+  /home/franklin/Documents/nosyevents/vendor/assets/vendor
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for ::1 at 2020-07-02 02:37:14 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 172)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 3918)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap.min.css' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /home/franklin/Documents/nosyevents/vendor/assets/css
+  /home/franklin/Documents/nosyevents/vendor/assets/fonts
+  /home/franklin/Documents/nosyevents/vendor/assets/images
+  /home/franklin/Documents/nosyevents/vendor/assets/js
+  /home/franklin/Documents/nosyevents/vendor/assets/vendor
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for ::1 at 2020-07-02 03:09:45 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 666)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.0ms | Allocations: 9582)
+
+
+  
+ActionView::Template::Error (couldn't find file 'vendor/bootstrap/css/bootstrap.min' with type 'text/css'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /home/franklin/Documents/nosyevents/lib/vendor
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <meta name="viewport" content="width=device-width, initial-scale=1">
+    11: 
+  
+app/assets/stylesheets/application.css:16
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-07-02 03:11:45 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 187)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 4181)
+
+
+  
+ActionView::Template::Error (couldn't find file 'vendor/bootstrap/css/bootstrap.min' with type 'text/css'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /home/franklin/Documents/nosyevents/lib/vendor
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <meta name="viewport" content="width=device-width, initial-scale=1">
+    11: 
+  
+app/assets/stylesheets/application.css:16
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-07-02 03:25:13 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1184ms (Views: 1158.1ms | ActiveRecord: 0.0ms | Allocations: 134623)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 03:25:18 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 3.0ms | Allocations: 749)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 294.9ms | Allocations: 198536)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 437ms (Views: 334.8ms | ActiveRecord: 16.4ms | Allocations: 221121)
+
+
+Started GET "/fonts/montserrat/Montserrat-Medium.ttf" for ::1 at 2020-07-02 03:25:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat/Montserrat-Medium.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.woff2?v=4.7.0" for ::1 at 2020-07-02 03:25:18 +0300
+Started GET "/fonts/montserrat/Montserrat-SemiBold.ttf" for ::1 at 2020-07-02 03:25:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat/Montserrat-SemiBold.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.woff?v=4.7.0" for ::1 at 2020-07-02 03:25:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.ttf?v=4.7.0" for ::1 at 2020-07-02 03:25:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2020-07-02 03:26:53 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 197)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1205)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 67.8ms | ActiveRecord: 0.0ms | Allocations: 11505)
+
+
+Started GET "/fonts/montserrat/Montserrat-Medium.ttf" for ::1 at 2020-07-02 03:26:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat/Montserrat-Medium.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.woff2?v=4.7.0" for ::1 at 2020-07-02 03:26:54 +0300
+Started GET "/fonts/montserrat/Montserrat-SemiBold.ttf" for ::1 at 2020-07-02 03:26:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat/Montserrat-SemiBold.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.woff?v=4.7.0" for ::1 at 2020-07-02 03:26:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.ttf?v=4.7.0" for ::1 at 2020-07-02 03:26:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-02 03:27:28 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 183)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 58.1ms | ActiveRecord: 0.0ms | Allocations: 10146)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-02 03:27:30 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 19.7ms | Allocations: 220)
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 177)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 58.3ms | Allocations: 2812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 126ms (Views: 122.1ms | ActiveRecord: 0.0ms | Allocations: 13715)
+
+
+Started GET "/" for ::1 at 2020-07-02 08:48:11 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 666)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.0ms | Allocations: 11099)
+
+
+  
+ActionView::Template::Error (couldn't find file 'font-awesome-4.7.0/css/font-awesome.min' with type 'text/css'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /home/franklin/Documents/nosyevents/lib
+  /home/franklin/Documents/nosyevents/vendor
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <meta name="viewport" content="width=device-width, initial-scale=1">
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-07-02 08:50:48 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 187)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms | Allocations: 5902)
+
+
+  
+ActionView::Template::Error (couldn't find file 'iconic/css/material-design-iconic-font.min' with type 'text/css'
+Checked in these paths: 
+  /home/franklin/Documents/nosyevents/app/assets/config
+  /home/franklin/Documents/nosyevents/app/assets/images
+  /home/franklin/Documents/nosyevents/app/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actioncable-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/activestorage-6.0.3.2/app/assets/javascripts
+  /var/lib/gems/2.5.0/gems/actionview-6.0.3.2/lib/assets/compiled
+  /var/lib/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/franklin/Documents/nosyevents/node_modules
+  /home/franklin/Documents/nosyevents/lib
+  /home/franklin/Documents/nosyevents/vendor
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /var/lib/gems/2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <meta name="viewport" content="width=device-width, initial-scale=1">
+    11: 
+  
+app/assets/stylesheets/application.css:18
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-07-02 08:51:29 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 172)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 817ms (Views: 815.8ms | ActiveRecord: 0.0ms | Allocations: 110425)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-02 08:51:36 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 3.1ms | Allocations: 751)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 401.5ms | Allocations: 198542)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 539ms (Views: 450.5ms | ActiveRecord: 18.8ms | Allocations: 221155)
+
+
+Started GET "/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0" for ::1 at 2020-07-02 08:51:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Material-Design-Iconic-Font.woff2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.woff2?v=4.7.0" for ::1 at 2020-07-02 08:51:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/Material-Design-Iconic-Font.woff?v=2.2.0" for ::1 at 2020-07-02 08:51:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Material-Design-Iconic-Font.woff"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.woff?v=4.7.0" for ::1 at 2020-07-02 08:51:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0" for ::1 at 2020-07-02 08:51:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Material-Design-Iconic-Font.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fonts/fontawesome-webfont.ttf?v=4.7.0" for ::1 at 2020-07-02 08:51:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
