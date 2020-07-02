@@ -66,3 +66,6 @@ gem 'devise'
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-facebook', '~> 6.0'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
+
+gem 'sprockets', '~> 4'
+gem 'sprockets-rails', :require => 'sprockets/railtie'

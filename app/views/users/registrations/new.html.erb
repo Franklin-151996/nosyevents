@@ -1,115 +1,78 @@
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <div class="limiter">
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-      <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-        <form class="login100-form validate-form flex-sb flex-w">
-          <span class="login100-form-title p-b-53">
-            Sign In With
+      <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+        <form class="login100-form validate-form">
+          <span class="login100-form-title p-b-49">
+            S'inscrire
           </span>
 
-          <a href="#" class="btn-face m-b-20">
-            <i class="fa fa-facebook-official"></i>
-            Facebook
-          </a>
-
-          <a href="#" class="btn-google m-b-20">
-            <img src="images/icons/icon-google.png" alt="GOOGLE">
-            Google
-          </a>
-          
-          <div class="p-t-31 p-b-9">
-            <span class="txt1">
-              Username
-            </span>
-          </div>
-          <div class="wrap-input100 validate-input" data-validate = "Username is required">
-            <input class="input100" type="text" name="username" >
+          <div class="wrap-input100 validate-input m-b-23" data-validate = "Nom d'utilisateur non valide">
+            <label for="user_username" class="label-input100">Nom d'utilisateur</label>
+            <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "input100", placeholder: "Entrer un nom d'utilisateur" %>
             <span class="focus-input100"></span>
           </div>
-          
-          <div class="p-t-13 p-b-9">
-            <span class="txt1">
-              Password
-            </span>
 
-            <a href="#" class="txt2 bo1 m-l-5">
-              Forgot?
+          <div class="wrap-input100 validate-input m-b-23" data-validate = "Entrer votre email">
+            <label for="user_email" class="label-input100">Email</label>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input100", placeholder: "Entrer un email" %>
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Mots de passe non valide">
+                <% if @minimum_password_length %>
+                  <label for="user_password" class="label-input100">Mots de passe (<%= @minimum_password_length %> characters minimum)</label>
+                <% end %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "input100", placeholder: "Entrer un mots de passe" %>
+            <span class="focus-input100" ></span>
+          </div><br>
+
+          <div class="wrap-input100 validate-input" data-validate="Confirmation mots de passe non valide">
+            <label for="user_password_confirmation" class="label-input100">Confirmation</label>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input100", placeholder: "Confirmer le mots de passe" %>
+            <span class="focus-input100" ></span>
+          </div><br>
+
+          
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <button class="login100-form-btn">
+                S'inscrire
+              </button>
+            </div>
+          </div>
+
+          <div class="txt1 text-center p-t-54 p-b-20">
+            <span>
+              Ou s'inscrire avec
+            </span>
+          </div>
+
+          <div class="flex-c-m">
+            <a href="#" class="login100-social-item bg1">
+              F
+            </a>
+
+            <a href="#" class="login100-social-item bg3">
+              G
             </a>
           </div>
-          <div class="wrap-input100 validate-input" data-validate = "Password is required">
-            <input class="input100" type="password" name="pass" >
-            <span class="focus-input100"></span>
-          </div>
 
-          <div class="container-login100-form-btn m-t-17">
-            <button class="login100-form-btn">
-              Sign In
-            </button>
-          </div>
+          <div class="flex-col-c p-t-50">
 
-          <div class="w-full text-center p-t-55">
-            <span class="txt2">
-              Not a member?
+              Déjà inscrit?
+
+            <a href="<%= new_session_path(resource_name)%>" class="txt2">
+            <span class="txt1 p-b-17" style="color: #0D85C6FF">
+              Se connecter
             </span>
-
-            <a href="#" class="txt2 bo1">
-              Sign up now
             </a>
           </div>
         </form>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-  
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image, autofocus: true%>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+
