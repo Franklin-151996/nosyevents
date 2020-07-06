@@ -1,16 +1,43 @@
-<h2>Resend confirmation instructions</h2>
+<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="css/style.css">
+ <%= render "devise/shared/error_messages", resource: resource %>
+<div class="container">
+	<div class="signin-content">
+		<div class="signin-image">
+			<figure>
+				<img src="images/forgot-pass.png" alt="crying-man">
+			</figure>
+            <%= link_to "J'ai déjà un compte", new_session_path(resource_name), class: "signup-image-link" %><br>
+            <%= link_to "Créer un compte", new_registration_path(resource_name), class: "signup-image-link" %>
+		</div>
+		<div class="signin-form">
+			<h2 class="form-title">Re-envoyer message de confirmation</h2>
+					<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+                    <div class="form-group">
+                        <label for="user_email">
+                          <i class="zmdi zmdi-email"></i>
+                        </label>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+                    </div>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+                    <div class="form-group form-button">
+                        <%= f.submit "Envoyez", class: "form-submit" %>
+                    </div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+<script async="" src="js/js" type="text/javascript"></script>
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-<%= render "users/shared/links" %>
+gtag('config', 'UA-23581568-13');
+</script>
+

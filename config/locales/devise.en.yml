@@ -32,9 +32,9 @@ en:
       success: "Authentification réussie à partir du compte %{kind}."
     passwords:
       no_token: "Vous ne pouvez pas accéder à cette page sans provenir d'un e-mail de réinitialisation de mot de passe. Si vous venez d'un e-mail de réinitialisation de mot de passe, assurez-vous d'avoir utilisé l'URL complète fournie."
-      send_instructions: "Vous recevrez un e-mail avec des instructions sur la façon de réinitialiser votre mot de passe en quelques minutes."
+      send_instructions: "Vous recevrez un e-mail avec des instructions sur la façon de réinitialiser votre mot de passe dans quelques minutes."
       send_paranoid_instructions: "Si votre adresse e-mail existe dans notre base de données, vous recevrez un lien de récupération de mot de passe à votre adresse e-mail dans quelques minutes."
-      updated: "Votre mot de passe a été changé avec succès. Vous êtes maintenant inscrit."
+      updated: "Votre mot de passe a été changé avec succès. Vous êtes maintenant connecter."
       updated_not_active: "Votre mot de passe a été changé avec succès."
     registrations:
       destroyed: "Au revoir! Votre compte a bien été annulé. Nous espérons te revoir bientôt."
@@ -61,5 +61,5 @@ en:
       not_found: "pas trouvé"
       not_locked: "n'était pas verrouillé"
       not_saved:
-        one: "1 erreur a empêché l'enregistrement de cette %{ressource}:"
-        other: "%{count} erreurs ont empêché l'enregistrement de cette %{ressource}:"
+        one: "1 erreur a empêché l'enregistrement de cette %{resource}:"
+        other: "%{count} erreurs ont empêché l'enregistrement de cette %{resource}:"
