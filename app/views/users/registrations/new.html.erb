@@ -1,78 +1,82 @@
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="limiter">
-    <div class="container-login100" style="background-image: url('images/bg-03.jpg');">
-      <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-        <form class="login100-form validate-form">
-          <span class="login100-form-title p-b-49">
-            S'inscrire
-          </span>
+<link rel="stylesheet" href="signup_login/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="signup_login/css/style.css">
+<%= render "devise/shared/error_messages", resource: resource %>
+<div class="main">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-form">
+                <h2 class="form-title">Inscription</h2>
+                <%= form_for(resource, as: resource_name, class: "register-form", url: registration_path(resource_name)) do |f| %>
+                    <div class="form-group">
+                        <label for="user_username">
+                          <i class="zmdi zmdi-account material-icons-name"></i>
+                        </label>
+                          <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Nom d'utilisateur" %>
+                    </div>
 
-          <div class="wrap-input100 validate-input m-b-23" data-validate = "Nom d'utilisateur non valide">
-            <label for="user_username" class="label-input100">Nom d'utilisateur</label>
-            <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "input100", placeholder: "Entrer un nom d'utilisateur" %>
-            <span class="focus-input100"></span>
-          </div>
+                    <div class="form-group">
+                        <label for="user_email">
+                          <i class="zmdi zmdi-email"></i>
+                        </label>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+                    </div>
 
-          <div class="wrap-input100 validate-input m-b-23" data-validate = "Entrer votre email">
-            <label for="user_email" class="label-input100">Email</label>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input100", placeholder: "Entrer un email" %>
-            <span class="focus-input100"></span>
-          </div>
+                    <div class="form-group">
+                        <label for="user_password">
+                            <i class="zmdi zmdi-lock"></i>
+                        </label>
 
-          <div class="wrap-input100 validate-input" data-validate="Mots de passe non valide">
-                <% if @minimum_password_length %>
-                  <label for="user_password" class="label-input100">Mots de passe (<%= @minimum_password_length %> characters minimum)</label>
+                            <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mots de passe ( 8 characters min )" %>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_password_confirmation">
+                            <i class="zmdi zmdi-lock-outline"></i>
+                        </label>
+                        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmer le mots de passe" %>
+                    </div>
+
+
+                    <div class="form-group form-button">
+                        <%= f.submit "s'inscrire", class: "form-submit" %>
+                    </div>
+
+                    <div class="social-sign_up">
+                    <span class="social-label">Ou s'inscrire avec</span>
+                    <ul class="socials">
+                        <li>
+                            <a href="https://colorlib.com/etc/regform/colorlib-regform-7/#">
+                                <i class="display-flex-center zmdi zmdi-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://colorlib.com/etc/regform/colorlib-regform-7/#">
+                                <i class="display-flex-center zmdi zmdi-google"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <% end %>
-              <%= f.password_field :password, autocomplete: "new-password", class: "input100", placeholder: "Entrer un mots de passe" %>
-            <span class="focus-input100" ></span>
-          </div><br>
-
-          <div class="wrap-input100 validate-input" data-validate="Confirmation mots de passe non valide">
-            <label for="user_password_confirmation" class="label-input100">Confirmation</label>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input100", placeholder: "Confirmer le mots de passe" %>
-            <span class="focus-input100" ></span>
-          </div><br>
-
-          
-          <div class="container-login100-form-btn">
-            <div class="wrap-login100-form-btn">
-              <div class="login100-form-bgbtn"></div>
-              <button class="login100-form-btn">
-                S'inscrire
-              </button>
             </div>
-          </div>
 
-          <div class="txt1 text-center p-t-54 p-b-20">
-            <span>
-              Ou s'inscrire avec
-            </span>
-          </div>
-
-          <div class="flex-c-m">
-            <a href="#" class="login100-social-item bg1">
-              F
-            </a>
-
-            <a href="#" class="login100-social-item bg3">
-              G
-            </a>
-          </div>
-
-          <div class="flex-col-c p-t-50">
-
-              Déjà inscrit?
-
-            <a href="<%= new_session_path(resource_name)%>" class="txt2">
-            <span class="txt1 p-b-17" style="color: #0D85C6FF">
-              Se connecter
-            </span>
-            </a>
-          </div>
-        </form>
-      </div>
+            <div class="signup-image">
+                <figure>
+                    <img src="images/signup.png" alt="sing up image">
+                </figure>
+                <%= link_to "J'ai déjà un compte", new_session_path(resource_name), class: "signup-image-link" %><br>
+                <%= link_to "j'ai pas reçu le mail d'activation", new_confirmation_path(resource_name), class: "signup-image-link" %>
+            </div>
+        </div>
     </div>
-  </div>
-<% end %>
+</div>
+<script src="signup_login/js/jquery.min.js" type="text/javascript"></script>
+<script src="signup_login/js/main.js" type="text/javascript"></script>
 
+<script async="" src="signup_login/js/js" type="text/javascript"></script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-23581568-13');
+</script>
