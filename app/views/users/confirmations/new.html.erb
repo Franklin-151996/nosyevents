@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-<link rel="stylesheet" href="css/style.css">
- <%= render "devise/shared/error_messages", resource: resource %>
+<%= render "devise/shared/error_messages", resource: resource %>
 <div class="container">
 	<div class="signin-content">
 		<div class="signin-image">
@@ -8,7 +6,8 @@
 				<img src="images/forgot-pass.png" alt="crying-man">
 			</figure>
             <%= link_to "J'ai déjà un compte", new_session_path(resource_name), class: "signup-image-link" %><br>
-            <%= link_to "Créer un compte", new_registration_path(resource_name), class: "signup-image-link" %>
+            <%= link_to "Créer un compte", new_registration_path(resource_name), class: "signup-image-link" %><br>
+            <%= link_to "Revenir à la page d'acceil", root_path, class: "signup-image-link" %>
 		</div>
 		<div class="signin-form">
 			<h2 class="form-title">Re-envoyer message de confirmation</h2>
@@ -28,11 +27,6 @@
 		</div>
 	</div>
 </div>
-
-<script src="js/jquery.min.js" type="text/javascript"></script>
-<script src="js/main.js" type="text/javascript"></script>
-
-<script async="" src="js/js" type="text/javascript"></script>
 <script type="text/javascript">
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
