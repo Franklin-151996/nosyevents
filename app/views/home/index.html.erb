@@ -63,7 +63,7 @@
                         <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
                     <% end %>
                     <ul class="sub-menu">
-                        <li><a href="edit_profil.html"><%= current_user.username.capitalize %></a> </li>
+                        <li><a href="/<%= current_user.username%>"><%= current_user.username.capitalize %></a> </li>
                         <li><a href="<%= posts_path%>">Mes publications</a></li>
                     <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
                     </ul>
@@ -82,7 +82,7 @@
     </header>
 
 
-    ================================================== -->
+
     <section class="s-featured">
         <div class="row">
             <div class="col-full">
@@ -92,20 +92,25 @@
                     <div class="featured__slide">
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('images/thumbs/featured/featured-guitarman.jpg');"></div>
+                            <div class="entry__background" style="background-image:url('<%= @posts[0].image%>');"></div>
                             
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0">Music</a></span>
+                                <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
 
-                                <h1><a href="#0" title="">What Your Music Preference Says About You and Your Personality.</a></h1>
+                                <h1><a href="#0" title=""><%=@posts[0].title%></a></h1>
 
                                 <div class="entry__info">
-                                    <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/avatars/user-05.jpg" alt="">
+                                    <a href="/<%=@posts[0].user.username%>" class="entry__profile-pic">
+                                        <% if @posts[0].user.image?%>
+                                            <img class="avatar" src="<%=@posts[0].user.image%>" alt="">
+                                        <%else%>
+                                            <img class="avatar" src="images/icons/user-icon.png" alt="">
+                                        <%end%>                                           
                                     </a>
                                     <ul class="entry__meta">
-                                        <li><a href="#0">Jonathan Smith</a></li>
-                                        <li>June 02, 2018</li>
+                                        <li><a href="#0"><%=@posts[0].address.capitalize%></a></li>
+                                        <% d0 = @posts[0].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d0[5..15] +' à '+ @posts[0].hour%></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->
@@ -117,21 +122,26 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('images/thumbs/featured/featured-watch.jpg');"></div>
+                            <div class="entry__background" style="background-image:url('<%= @posts[1].image%>');"></div>
                             
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0">Management</a></span>
+                                <span class="entry__category"><a href="#0"><%=@posts[1].genres.first.list%></a></span>
 
-                                <h1><a href="#0" title="">The Pomodoro Technique Really Works.</a></h1>
+                                <h1><a href="#0" title=""><%=@posts[1].title%></a></h1>
 
                                 <div class="entry__info">
-                                    <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    <a href="/<%=@posts[1].user.username%>" class="entry__profile-pic">
+                                        <% if @posts[1].user.image?%>
+                                            <img class="avatar" src="<%=@posts[1].user.image%>" alt="">
+                                        <%else%>
+                                            <img class="avatar" src="images/icons/user-icon.png" alt="">
+                                        <%end%> 
                                     </a>
 
                                     <ul class="entry__meta">
-                                        <li><a href="#0">John Doe</a></li>
-                                        <li>June 13, 2018</li>
+                                        <li><a href="#0"><%=@posts[1].address.capitalize%></a></li>
+                                        <% d1 = @posts[1].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d1[5..15] +' à '+ @posts[1].hour%></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->
@@ -144,21 +154,26 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('images/thumbs/featured/featured-beetle.jpg');"></div>
+                            <div class="entry__background" style="background-image:url('<%= @posts[3].image%>');"></div>
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0">LifeStyle</a></span>
+                                <span class="entry__category"><a href="#0"><%=@posts[3].genres.first.list%></a></span>
 
-                                <h1><a href="#0" title="">The difference between Classics, Vintage & Antique Cars.</a></h1>
+                                <h1><a href="#0" title=""><%=@posts[3].title%></a></h1>
 
                                 <div class="entry__info">
-                                    <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    <a href="/<%=@posts[3].user.username%>" class="entry__profile-pic">
+                                        <% if @posts[3].user.image?%>
+                                            <img class="avatar" src="<%=@posts[3].user.image%>" alt="">
+                                        <%else%>
+                                            <img class="avatar" src="images/icons/user-icon.png" alt="">
+                                        <%end%> 
                                     </a>
 
                                     <ul class="entry__meta">
-                                        <li><a href="#0">John Doe</a></li>
-                                        <li>June 12, 2018</li>
+                                        <li><a href="#0"><%=@posts[3].address.capitalize%></a></li>
+                                        <% d2 = @posts[3].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d2[5..15] +' à '+ @posts[3].hour%></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->

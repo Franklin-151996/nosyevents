@@ -1,8 +1,7 @@
-
-City.create(ville: "ANTSIRANANA")
+City.create(ville: "ANTANANARIVO")
 City.create(ville: "MAHAJANGA")
 City.create(ville: "TOAMASINA")
-City.create(ville: "ANTANANARIVO")
+City.create(ville: "ANTSIRANANA")
 City.create(ville: "FIANARANTSOA")
 City.create(ville: "TOLIARA")
 

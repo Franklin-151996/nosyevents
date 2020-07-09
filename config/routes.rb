@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, only: [:new]
   devise_for :users
 
   get "/users/sign_out", to: "home#destroy"
+  get "/:user_name", to: "profil#index"
 
   resources :posts
 
   root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

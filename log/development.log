@@ -39046,3 +39046,1870 @@ puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.5) lib/puma/server.rb:472:in `process_client'
 puma (4.3.5) lib/puma/server.rb:328:in `block in run'
 puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (30.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (424.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_development"[0m
+  [1m[35m (362.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_test"[0m
+  [1m[35m (1404.0ms)[0m  [1m[35mCREATE DATABASE "nosyevents_development" ENCODING = 'unicode'[0m
+  [1m[35m (1081.6ms)[0m  [1m[35mCREATE DATABASE "nosyevents_test" ENCODING = 'unicode'[0m
+  [1m[35m (285.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (159.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8448003242917868070)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200701214827)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (124.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "image" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (46.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701214827"]]
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdmins (20200701214852)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (85.1ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "username" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (48.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  [1m[35m (47.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701214852"]]
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCities (20200701215136)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (89.3ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "ville" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215136"]]
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGenres (20200701215145)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (100.8ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "list" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215145"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20200701215154)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (123.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "address" character varying, "date_limite" timestamp, "hour" character varying, "description" text, "price" character varying, "payer" boolean DEFAULT FALSE, "image" character varying, "user_id" bigint, "city_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (71.7ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_user_id" ON "posts"  ("user_id")[0m
+  [1m[35m (44.7ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_city_id" ON "posts"  ("city_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215154"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to GenresPosts (20200701215222)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "genres_posts" ("genre_id" bigint, "post_id" bigint)[0m
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_genre_id" ON "genres_posts"  ("genre_id")[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_post_id" ON "genres_posts"  ("post_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215222"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-09 18:02:06.149091"], ["updated_at", "2020-07-09 18:02:06.149091"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(8448003242917868070)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (2.0ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "ANTANANARIVO"], ["created_at", "2020-07-09 18:02:26.186793"], ["updated_at", "2020-07-09 18:02:26.186793"]]
+  [1m[35m (23.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (1.1ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "MAHAJANGA"], ["created_at", "2020-07-09 18:02:26.227265"], ["updated_at", "2020-07-09 18:02:26.227265"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (1.2ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "TOAMASINA"], ["created_at", "2020-07-09 18:02:26.248697"], ["updated_at", "2020-07-09 18:02:26.248697"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "ANTSIRANANA"], ["created_at", "2020-07-09 18:02:26.269986"], ["updated_at", "2020-07-09 18:02:26.269986"]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "FIANARANTSOA"], ["created_at", "2020-07-09 18:02:26.292141"], ["updated_at", "2020-07-09 18:02:26.292141"]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "TOLIARA"], ["created_at", "2020-07-09 18:02:26.314354"], ["updated_at", "2020-07-09 18:02:26.314354"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "sport"], ["created_at", "2020-07-09 18:02:26.405483"], ["updated_at", "2020-07-09 18:02:26.405483"]]
+  [1m[35m (17.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "spectacle"], ["created_at", "2020-07-09 18:02:26.437335"], ["updated_at", "2020-07-09 18:02:26.437335"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "cabaret"], ["created_at", "2020-07-09 18:02:26.458787"], ["updated_at", "2020-07-09 18:02:26.458787"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "soiree"], ["created_at", "2020-07-09 18:02:26.481097"], ["updated_at", "2020-07-09 18:02:26.481097"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "balle"], ["created_at", "2020-07-09 18:02:26.504615"], ["updated_at", "2020-07-09 18:02:26.504615"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "scolaire"], ["created_at", "2020-07-09 18:02:26.525430"], ["updated_at", "2020-07-09 18:02:26.525430"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "festival"], ["created_at", "2020-07-09 18:02:26.547506"], ["updated_at", "2020-07-09 18:02:26.547506"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "foire"], ["created_at", "2020-07-09 18:02:26.570400"], ["updated_at", "2020-07-09 18:02:26.570400"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "salon"], ["created_at", "2020-07-09 18:02:26.592122"], ["updated_at", "2020-07-09 18:02:26.592122"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "teatre"], ["created_at", "2020-07-09 18:02:26.614427"], ["updated_at", "2020-07-09 18:02:26.614427"]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "evangelique"], ["created_at", "2020-07-09 18:02:26.636754"], ["updated_at", "2020-07-09 18:02:26.636754"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-07-09 21:04:27 +0300
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  Rendered home/index.html.erb within layouts/application (Duration: 65.6ms | Allocations: 3771)
+Completed 200 OK in 249ms (Views: 172.9ms | ActiveRecord: 29.5ms | Allocations: 13616)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-09 21:04:35 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/devise
+  Rendered users/sessions/new.html.erb within layouts/devise (Duration: 17.9ms | Allocations: 2546)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 108ms (Views: 49.3ms | ActiveRecord: 0.0ms | Allocations: 18859)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-09 21:06:46 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/devise
+  Rendered users/sessions/new.html.erb within layouts/devise (Duration: 13.0ms | Allocations: 1084)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 55ms (Views: 50.7ms | ActiveRecord: 0.0ms | Allocations: 6798)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-09 21:07:33 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/devise
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.2/app/views/devise/shared/_error_messages.html.erb (Duration: 2.2ms | Allocations: 218)
+  Rendered users/registrations/new.html.erb within layouts/devise (Duration: 21.0ms | Allocations: 1704)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 0.0ms | Allocations: 7014)
+
+
+Started POST "/users" for ::1 at 2020-07-09 21:08:02 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"KeLk10D5ZYYZKm/O80ovktsabKg02SYasQBG5eansxsH4noyGFCy++S7CdZjt5HdQ1vEcd6nB+Txm2+aYuwdFQ==", "user"=>{"username"=>"Franklin", "email"=>"fr@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"s'inscrire"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fr@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (11.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Franklin"], ["email", "fr@gmail.com"], ["encrypted_password", "$2a$12$NbDHCZg4p8AlzATHTAz4J.5xaxFdoW5Um1spfGQe/ddR5Q/.4XJlG"], ["confirmation_token", "j_w9qPf-rfgH28DP--zm"], ["confirmation_sent_at", "2020-07-09 18:08:03.383303"], ["created_at", "2020-07-09 18:08:03.382682"], ["updated_at", "2020-07-09 18:08:03.382682"]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (Duration: 17.1ms | Allocations: 265)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 321.2ms
+Delivered mail 5f075d041ff69_3e132ad009214040677a0@Mr-Hyriol.mail (720.7ms)
+Date: Thu, 09 Jul 2020 21:08:04 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: fr@gmail.com
+Message-ID: <5f075d041ff69_3e132ad009214040677a0@Mr-Hyriol.mail>
+Subject: Instructions de confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome fr@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=j_w9qPf-rfgH28DP--zm">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 2012ms (ActiveRecord: 24.7ms | Allocations: 239377)
+
+
+Started GET "/" for ::1 at 2020-07-09 21:08:04 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 702)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 3109)
+
+
+Started GET "/users/confirmation?confirmation_token=j_w9qPf-rfgH28DP--zm" for ::1 at 2020-07-09 21:08:44 +0300
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"j_w9qPf-rfgH28DP--zm"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "j_w9qPf-rfgH28DP--zm"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-07-09 18:08:44.274854"], ["updated_at", "2020-07-09 18:08:44.276026"], ["id", 1]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 57ms (ActiveRecord: 20.0ms | Allocations: 6875)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-09 21:08:44 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/devise
+  Rendered users/sessions/new.html.erb within layouts/devise (Duration: 6.7ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 5710)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-07-09 21:09:00 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"EEsEaQZMl9IWC1ama4c6Rx0sIU6MrbIrdvC67DnBp9/dp/+lPvKkroPjxmAtJVlo0SDgjRHievcqi5eZdOjkZQ==", "user"=>{"email"=>"fr@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"se connecter"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fr@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", "2020-07-09 18:09:01.168398"], ["updated_at", "2020-07-09 18:09:01.169580"], ["id", 1]]
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 513ms (ActiveRecord: 15.9ms | Allocations: 8859)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 21:09:01 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 235)
+Completed 200 OK in 112ms (Views: 22.1ms | ActiveRecord: 12.4ms | Allocations: 18060)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-09 21:09:41 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/new.html.erb within layouts/new_post
+  [1m[36mCity Load (3.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/new.html.erb:16:in `collect'
+  Rendered posts/new.html.erb within layouts/new_post (Duration: 116.8ms | Allocations: 14607)
+Completed 200 OK in 139ms (Views: 109.0ms | ActiveRecord: 21.4ms | Allocations: 16822)
+
+
+Started POST "/posts" for ::1 at 2020-07-09 21:10:25 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"NUpmF2hika8KfuKou2Hp1wS+qSPixw62J80mKSaB4pyyZoUhZ/ZlgH2/VO3aFc2DbtLvrlwVxhzRJ5qbLDw9Dw==", "post"=>{"title"=>"barinjaka", "city_id"=>"1", "address"=>"mamay be", "date_limite"=>"2020-07-21", "hour"=>"01:13", "description"=>"mlay be", "user_id"=>"1", "price"=>"400", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f3d0c585318 @tempfile=#<Tempfile:/tmp/RackMultipart20200709-15891-voga7o.jpg>, @original_filename="Dark-Pink-Wallpapers-HD-Free-Download.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"Dark-Pink-Wallpapers-HD-Free-Download.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "list"=>{"sport"=>"yes", "spectacle"=>"no", "cabaret"=>"no", "soiree"=>"no", "balle"=>"no", "scolaire"=>"yes", "festival"=>"no", "foire"=>"no", "salon"=>"no", "teatre"=>"no", "evangelique"=>"no"}, "commit"=>"Créer"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mCity Load (2.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Create (4.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "address", "date_limite", "hour", "description", "price", "image", "user_id", "city_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "barinjaka"], ["address", "mamay be"], ["date_limite", "2020-07-21 00:00:00"], ["hour", "01:13"], ["description", "mlay be"], ["price", "400"], ["image", "image.jpg"], ["user_id", 1], ["city_id", 1], ["created_at", "2020-07-09 18:10:25.419183"], ["updated_at", "2020-07-09 18:10:25.419183"]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mGenre Load (5.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."list" = $1[0m  [["list", "sport"]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost::HABTM_Genres Create (5.3ms)[0m  [1m[32mINSERT INTO "genres_posts" ("genre_id", "post_id") VALUES ($1, $2)[0m  [["genre_id", 1], ["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mGenre Load (4.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."list" = $1[0m  [["list", "scolaire"]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost::HABTM_Genres Create (2.7ms)[0m  [1m[32mINSERT INTO "genres_posts" ("genre_id", "post_id") VALUES ($1, $2)[0m  [["genre_id", 6], ["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 360ms (ActiveRecord: 83.9ms | Allocations: 32015)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 21:10:25 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 229)
+Completed 200 OK in 42ms (Views: 24.9ms | ActiveRecord: 5.2ms | Allocations: 3921)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-09 21:10:32 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/new.html.erb within layouts/new_post
+  [1m[36mCity Load (0.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/new.html.erb:16:in `collect'
+  Rendered posts/new.html.erb within layouts/new_post (Duration: 20.9ms | Allocations: 2334)
+Completed 200 OK in 36ms (Views: 23.4ms | ActiveRecord: 1.7ms | Allocations: 3907)
+
+
+Started POST "/posts" for ::1 at 2020-07-09 21:11:13 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"dF9Dx+Efyg/svs5W5ekmOSBZT6bPXLAWdmk5jf+CbObzc6Dx7os+IJt/eBOEnQJtSjUJK3GOeLyAg4U/9T+zdQ==", "post"=>{"title"=>"tsiliva", "city_id"=>"2", "address"=>"mamay be", "date_limite"=>"2020-07-16", "hour"=>"01:14", "description"=>"mafana be", "user_id"=>"1", "price"=>"200", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f3d1c0a9cd0 @tempfile=#<Tempfile:/tmp/RackMultipart20200709-15891-1xsjqcd.jpg>, @original_filename="free-gradient-wallpaper-26032-26717-hd-wallpapers.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"free-gradient-wallpaper-26032-26717-hd-wallpapers.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "list"=>{"sport"=>"no", "spectacle"=>"no", "cabaret"=>"no", "soiree"=>"no", "balle"=>"yes", "scolaire"=>"yes", "festival"=>"no", "foire"=>"no", "salon"=>"no", "teatre"=>"no", "evangelique"=>"no"}, "commit"=>"Créer"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "address", "date_limite", "hour", "description", "price", "image", "user_id", "city_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "tsiliva"], ["address", "mamay be"], ["date_limite", "2020-07-16 00:00:00"], ["hour", "01:14"], ["description", "mafana be"], ["price", "200"], ["image", "image.jpg"], ["user_id", 1], ["city_id", 2], ["created_at", "2020-07-09 18:11:13.937996"], ["updated_at", "2020-07-09 18:11:13.937996"]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."list" = $1[0m  [["list", "balle"]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost::HABTM_Genres Create (0.9ms)[0m  [1m[32mINSERT INTO "genres_posts" ("genre_id", "post_id") VALUES ($1, $2)[0m  [["genre_id", 5], ["post_id", 2]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost Load (5.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mGenre Load (3.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."list" = $1[0m  [["list", "scolaire"]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost::HABTM_Genres Create (0.8ms)[0m  [1m[32mINSERT INTO "genres_posts" ("genre_id", "post_id") VALUES ($1, $2)[0m  [["genre_id", 6], ["post_id", 2]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 205ms (ActiveRecord: 51.1ms | Allocations: 16999)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 21:11:14 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 38)
+Completed 200 OK in 28ms (Views: 8.8ms | ActiveRecord: 0.8ms | Allocations: 2845)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-09 21:11:18 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/new.html.erb within layouts/new_post
+  [1m[36mCity Load (2.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/new.html.erb:16:in `collect'
+  Rendered posts/new.html.erb within layouts/new_post (Duration: 26.3ms | Allocations: 2327)
+Completed 200 OK in 38ms (Views: 26.6ms | ActiveRecord: 3.3ms | Allocations: 3882)
+
+
+Started POST "/posts" for ::1 at 2020-07-09 21:12:13 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"jjGZL6QxWFrDQV0as0fk106z/xVJPEaK3VN3o2Pv+agJHXoZq6WsdbSA61/SM8CDJN+5mPfujiArucsRaVImOw==", "post"=>{"title"=>"Momota", "city_id"=>"6", "address"=>"mdr", "date_limite"=>"2020-07-06", "hour"=>"02:14", "description"=>"tapatsinay", "user_id"=>"1", "price"=>"400", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f3d1c11c050 @tempfile=#<Tempfile:/tmp/RackMultipart20200709-15891-sxk1q4.jpg>, @original_filename="madagascar-avenue-of-the-baobabs.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"madagascar-avenue-of-the-baobabs.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "list"=>{"sport"=>"no", "spectacle"=>"yes", "cabaret"=>"no", "soiree"=>"no", "balle"=>"no", "scolaire"=>"no", "festival"=>"no", "foire"=>"no", "salon"=>"no", "teatre"=>"no", "evangelique"=>"no"}, "commit"=>"Créer"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Create (3.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "address", "date_limite", "hour", "description", "price", "image", "user_id", "city_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "Momota"], ["address", "mdr"], ["date_limite", "2020-07-06 00:00:00"], ["hour", "02:14"], ["description", "tapatsinay"], ["price", "400"], ["image", "image.jpg"], ["user_id", 1], ["city_id", 6], ["created_at", "2020-07-09 18:12:13.122155"], ["updated_at", "2020-07-09 18:12:13.122155"]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."list" = $1[0m  [["list", "spectacle"]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost::HABTM_Genres Create (0.8ms)[0m  [1m[32mINSERT INTO "genres_posts" ("genre_id", "post_id") VALUES ($1, $2)[0m  [["genre_id", 2], ["post_id", 3]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 135ms (ActiveRecord: 34.6ms | Allocations: 12340)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 21:12:13 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 36)
+Completed 200 OK in 48ms (Views: 20.7ms | ActiveRecord: 2.5ms | Allocations: 2848)
+
+
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" BETWEEN $1 AND $2 LIMIT $3[0m  [["id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" >= $1 AND "posts"."id" < $2 LIMIT $3[0m  [["id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 4]]
+Started GET "/" for ::1 at 2020-07-09 22:22:24 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 4.0ms | Allocations: 15365)
+
+
+  
+NoMethodError (undefined method `<<' for nil:NilClass):
+  
+app/controllers/home_controller.rb:11:in `block in index'
+app/controllers/home_controller.rb:10:in `index'
+Started GET "/" for ::1 at 2020-07-09 22:23:38 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1590)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 20.8ms | Allocations: 17294)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 	<!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header header">
+
+        <div class="header__logo">
+            <a class="logo" href="<% root_path %>">
+                <img src="home/images/LOGO.png" alt="Homepage">
+            </a>
+        </div> <!-- end header__logo -->
+
+        <a class="header__search-trigger" href="#"></a>
+
+        <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+        <nav class="header__nav-wrap">
+
+            <h2 class="header__nav-heading h6">Menu</h2>
+
+            <ul class="header__nav">
+                <li class="has-children">
+                    <a href="#0" title="">Province</a>
+                    <ul class="sub-menu">
+                    	<li><a href="category.html">Antananarivo</a></li>
+                        <li><a href="category.html">Antsiranana</a></li>
+                        <li><a href="category.html">Mahajanga</a></li>
+                        <li><a href="category.html">Toamasina</a></li>
+                        <li><a href="category.html">Fianarantsoa</a></li>
+                        <li><a href="category.html">Toliara</a></li>
+                    </ul>
+                <li class="has-children">
+                    <a href="#0" title="">Tout les evenemets</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">Sport</a></li>
+                        <li><a href="category.html">Cabaret</a></li>
+                        <li><a href="category.html">Spectacle</a></li>
+                        <li><a href="category.html">Soirée</a></li>
+                        <li><a href="category.html">Festival</a></li>
+                        <li><a href="category.html">Scolaire</a></li>
+                        <li><a href="category.html">Lifestyle</a></li>
+                        <li><a href="category.html">Foire</a></li>
+                        <li><a href="category.html">Salon</a></li>
+                        <li><a href="category.html">Teatre</a></li>
+                        <li><a href="category.html">Evangelique</a></li>
+                        <li><a href="category.html">Balle</a></li>
+                    </ul>
+                </li>
+
+                <% if(user_signed_in?) %>
+                <li class="has-children">
+                    <%if current_user.image?%>
+                        <a href="#0" title=""><img src="<%= current_user.image %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+                    <% else %>
+                        <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+                    <% end %>
+                    <ul class="sub-menu">
+                        <li><a href="edit_profil.html"><%= current_user.username.capitalize %></a> </li>
+                        <li><a href="<%= posts_path%>">Mes publications</a></li>
+                    <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
+                    </ul>
+                </li>
+                <% else %>
+                    <li><%= link_to "se connecter", new_user_session_path, style: "color: #15c4d4; font-size: 18px" %></li>
+                    <li><%= link_to "s'inscrire", new_user_registration_path(@user), style: "color: #68de4d; font-size: 16px" %></li>
+                <% end %>
+
+            </ul>
+
+            <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <section class="s-featured">
+        <div class="row">
+            <div class="col-full">
+
+                <div class="featured-slider featured" data-aos="zoom-in">
+
+                    <div class="featured__slide">
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= posts[0].image%>');"></div>
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=posts[0].genre.first%></a></span>
+
+                                <h1><a href="#0" title=""><%=posts[0].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-05.jpg" alt="">
+                                    </a>
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=posts[0].address%></a></li>
+                                        <li><%=posts[0].date_limite%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                            
+                        </div> <!-- end entry -->
+                    </div> <!-- end featured__slide -->
+
+                    <div class="featured__slide">
+
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= posts[21.image%>');"></div>
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=posts[1].genre.first%></a></span>
+
+                                <h1><a href="#0" title=""><%=posts[1].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=posts[1].address%></a></li>
+                                        <li><%=posts[1].date_limite%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                            
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__slide -->
+
+                    <div class="featured__slide">
+
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= posts[2].image%>');"></div>
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=posts[2].genre.first%></a></span>
+
+                                <h1><a href="#0" title=""><%=posts[2].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=posts[2].address%></a></li>
+                                        <li><%=posts[2].date_limite%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__slide -->
+                    
+                </div> <!-- end featured -->
+
+            </div> <!-- end col-full -->
+        </div>
+    </section> <!-- end s-featured -->
+
+
+
+
+
+):
+1:    	<!-- preloader
+2:        ================================================== -->
+3:        <div id="preloader">
+4:            <div id="loader" class="dots-fade">
+5:                <div></div>
+6:                <div></div>
+7:                <div></div>
+8:            </div>
+9:        </div>
+10:    
+11:    
+12:        <!-- header
+13:        ================================================== -->
+14:        <header class="s-header header">
+15:    
+16:            <div class="header__logo">
+17:                <a class="logo" href="<% root_path %>">
+18:                    <img src="home/images/LOGO.png" alt="Homepage">
+19:                </a>
+20:            </div> <!-- end header__logo -->
+21:    
+22:            <a class="header__search-trigger" href="#"></a>
+23:    
+24:            <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+25:            <nav class="header__nav-wrap">
+26:    
+27:                <h2 class="header__nav-heading h6">Menu</h2>
+28:    
+29:                <ul class="header__nav">
+30:                    <li class="has-children">
+31:                        <a href="#0" title="">Province</a>
+32:                        <ul class="sub-menu">
+33:                        	<li><a href="category.html">Antananarivo</a></li>
+34:                            <li><a href="category.html">Antsiranana</a></li>
+35:                            <li><a href="category.html">Mahajanga</a></li>
+36:                            <li><a href="category.html">Toamasina</a></li>
+37:                            <li><a href="category.html">Fianarantsoa</a></li>
+38:                            <li><a href="category.html">Toliara</a></li>
+39:                        </ul>
+40:                    <li class="has-children">
+41:                        <a href="#0" title="">Tout les evenemets</a>
+42:                        <ul class="sub-menu">
+43:                            <li><a href="category.html">Sport</a></li>
+44:                            <li><a href="category.html">Cabaret</a></li>
+45:                            <li><a href="category.html">Spectacle</a></li>
+46:                            <li><a href="category.html">Soirée</a></li>
+47:                            <li><a href="category.html">Festival</a></li>
+48:                            <li><a href="category.html">Scolaire</a></li>
+49:                            <li><a href="category.html">Lifestyle</a></li>
+50:                            <li><a href="category.html">Foire</a></li>
+51:                            <li><a href="category.html">Salon</a></li>
+52:                            <li><a href="category.html">Teatre</a></li>
+53:                            <li><a href="category.html">Evangelique</a></li>
+54:                            <li><a href="category.html">Balle</a></li>
+55:                        </ul>
+56:                    </li>
+57:    
+58:                    <% if(user_signed_in?) %>
+59:                    <li class="has-children">
+60:                        <%if current_user.image?%>
+61:                            <a href="#0" title=""><img src="<%= current_user.image %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+62:                        <% else %>
+63:                            <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+64:                        <% end %>
+65:                        <ul class="sub-menu">
+66:                            <li><a href="edit_profil.html"><%= current_user.username.capitalize %></a> </li>
+67:                            <li><a href="<%= posts_path%>">Mes publications</a></li>
+68:                        <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
+69:                        </ul>
+70:                    </li>
+71:                    <% else %>
+72:                        <li><%= link_to "se connecter", new_user_session_path, style: "color: #15c4d4; font-size: 18px" %></li>
+73:                        <li><%= link_to "s'inscrire", new_user_registration_path(@user), style: "color: #68de4d; font-size: 16px" %></li>
+74:                    <% end %>
+75:    
+76:                </ul>
+77:    
+78:                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+79:    
+80:            </nav>
+81:    
+82:        </header>
+83:    
+84:    
+85:    
+86:        <section class="s-featured">
+87:            <div class="row">
+88:                <div class="col-full">
+89:    
+90:                    <div class="featured-slider featured" data-aos="zoom-in">
+91:    
+92:                        <div class="featured__slide">
+93:                            <div class="entry">
+94:    
+95:                                <div class="entry__background" style="background-image:url('<%= posts[0].image%>');"></div>
+96:                                
+97:                                <div class="entry__content">
+98:                                    <span class="entry__category"><a href="#0"><%=posts[0].genre.first%></a></span>
+99:    
+100:                                    <h1><a href="#0" title=""><%=posts[0].title%></a></h1>
+101:    
+102:                                    <div class="entry__info">
+103:                                        <a href="#0" class="entry__profile-pic">
+104:                                            <img class="avatar" src="images/avatars/user-05.jpg" alt="">
+105:                                        </a>
+106:                                        <ul class="entry__meta">
+107:                                            <li><a href="#0"><%=posts[0].address%></a></li>
+108:                                            <li><%=posts[0].date_limite%></li>
+109:                                        </ul>
+110:                                    </div>
+111:                                </div> <!-- end entry__content -->
+112:                                
+113:                            </div> <!-- end entry -->
+114:                        </div> <!-- end featured__slide -->
+115:    
+116:                        <div class="featured__slide">
+117:    
+118:                            <div class="entry">
+119:    
+120:                                <div class="entry__background" style="background-image:url('<%= posts[21.image%>');"></div>
+121:                                
+122:                                <div class="entry__content">
+123:                                    <span class="entry__category"><a href="#0"><%=posts[1].genre.first%></a></span>
+124:    
+125:                                    <h1><a href="#0" title=""><%=posts[1].title%></a></h1>
+126:    
+127:                                    <div class="entry__info">
+128:                                        <a href="#0" class="entry__profile-pic">
+129:                                            <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+130:                                        </a>
+131:    
+132:                                        <ul class="entry__meta">
+133:                                            <li><a href="#0"><%=posts[1].address%></a></li>
+134:                                            <li><%=posts[1].date_limite%></li>
+135:                                        </ul>
+136:                                    </div>
+137:                                </div> <!-- end entry__content -->
+138:                                
+139:                            </div> <!-- end entry -->
+140:    
+141:                        </div> <!-- end featured__slide -->
+142:    
+143:                        <div class="featured__slide">
+144:    
+145:                            <div class="entry">
+146:    
+147:                                <div class="entry__background" style="background-image:url('<%= posts[2].image%>');"></div>
+148:    
+149:                                <div class="entry__content">
+150:                                    <span class="entry__category"><a href="#0"><%=posts[2].genre.first%></a></span>
+151:    
+152:                                    <h1><a href="#0" title=""><%=posts[2].title%></a></h1>
+153:    
+154:                                    <div class="entry__info">
+155:                                        <a href="#0" class="entry__profile-pic">
+156:                                            <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+157:                                        </a>
+158:    
+159:                                        <ul class="entry__meta">
+160:                                            <li><a href="#0"><%=posts[2].address%></a></li>
+161:                                            <li><%=posts[2].date_limite%></li>
+162:                                        </ul>
+163:                                    </div>
+164:                                </div> <!-- end entry__content -->
+165:    
+166:                            </div> <!-- end entry -->
+167:    
+168:                        </div> <!-- end featured__slide -->
+169:                        
+170:                    </div> <!-- end featured -->
+171:    
+172:                </div> <!-- end col-full -->
+173:            </div>
+174:        </section> <!-- end s-featured -->
+  
+app/views/home/index.html.erb:120: syntax error, unexpected ')', expecting ']'
+app/views/home/index.html.erb:181: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:120: syntax error, unexpected ')', expecting ']'
+app/views/home/index.html.erb:181: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:120: syntax error, unexpected ')', expecting ']'
+app/views/home/index.html.erb:181: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:120: syntax error, unexpected ')', expecting ']'
+app/views/home/index.html.erb:181: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:120: syntax error, unexpected ')', expecting ']'
+app/views/home/index.html.erb:181: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:120: syntax error, unexpected ')', expecting ']'
+app/views/home/index.html.erb:181: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for ::1 at 2020-07-09 22:24:33 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  Rendered home/index.html.erb within layouts/application (Duration: 2044.4ms | Allocations: 206793)
+Completed 500 Internal Server Error in 2060ms (ActiveRecord: 17.9ms | Allocations: 208448)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts' for #<#<Class:0x00007f3d0c8678d8>:0x00007f3d0c865ad8>
+Did you mean?  @posts
+               @post):
+    92:                     <div class="featured__slide">
+    93:                         <div class="entry">
+    94: 
+    95:                             <div class="entry__background" style="background-image:url('<%= posts[0].image%>');"></div>
+    96:                             
+    97:                             <div class="entry__content">
+    98:                                 <span class="entry__category"><a href="#0"><%=posts[0].genre.first%></a></span>
+  
+app/views/home/index.html.erb:95
+Started GET "/" for ::1 at 2020-07-09 22:25:56 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (3.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  Rendered home/index.html.erb within layouts/application (Duration: 45.7ms | Allocations: 4895)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 4.6ms | Allocations: 6549)
+
+
+  
+ActionView::Template::Error (undefined method `genre' for #<Post:0x00007f3d0c411450>
+Did you mean?  genres
+               genres=):
+     95:                             <div class="entry__background" style="background-image:url('<%= @posts[0].image%>');"></div>
+     96:                             
+     97:                             <div class="entry__content">
+     98:                                 <span class="entry__category"><a href="#0"><%=@posts[0].genre.first%></a></span>
+     99: 
+    100:                                 <h1><a href="#0" title=""><%=@posts[0].title%></a></h1>
+    101: 
+  
+app/views/home/index.html.erb:98
+Started GET "/" for ::1 at 2020-07-09 22:26:46 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:123
+  Rendered home/index.html.erb within layouts/application (Duration: 1590.7ms | Allocations: 213381)
+Completed 500 Internal Server Error in 1606ms (ActiveRecord: 27.2ms | Allocations: 215036)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts' for #<#<Class:0x00007f3d18975890>:0x00007f3d18973cc0>
+Did you mean?  @posts
+               @post):
+    144: 
+    145:                         <div class="entry">
+    146: 
+    147:                             <div class="entry__background" style="background-image:url('<%= posts[2].image%>');"></div>
+    148: 
+    149:                             <div class="entry__content">
+    150:                                 <span class="entry__category"><a href="#0"><%=@posts[2].genres.first%></a></span>
+  
+app/views/home/index.html.erb:147
+Started GET "/" for ::1 at 2020-07-09 22:27:12 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (6.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:123
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:150
+  Rendered home/index.html.erb within layouts/application (Duration: 60.4ms | Allocations: 5402)
+Completed 200 OK in 98ms (Views: 65.3ms | ActiveRecord: 18.9ms | Allocations: 8609)
+
+
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (2.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-07-09 22:30:39 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (4.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (3.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:123
+  [1m[36mGenre Load (3.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:150
+  Rendered home/index.html.erb within layouts/application (Duration: 59.5ms | Allocations: 5401)
+Completed 200 OK in 91ms (Views: 63.1ms | ActiveRecord: 13.4ms | Allocations: 8576)
+
+
+Started GET "/" for ::1 at 2020-07-09 22:33:22 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:123
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:150
+  Rendered home/index.html.erb within layouts/application (Duration: 79.2ms | Allocations: 7408)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 8.2ms | Allocations: 9058)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for Mon, 06 Jul 2020 00:00:00 UTC +00:00:Time):
+    158: 
+    159:                                     <ul class="entry__meta">
+    160:                                         <li><a href="#0"><%=@posts[2].address%></a></li>
+    161:                                         <li><%=@posts[2].date_limite[0..7]%></li>
+    162:                                     </ul>
+    163:                                 </div>
+    164:                             </div> <!-- end entry__content -->
+  
+app/views/home/index.html.erb:161
+Started GET "/" for ::1 at 2020-07-09 22:34:46 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (2.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (2.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:123
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:150
+  Rendered home/index.html.erb within layouts/application (Duration: 73.3ms | Allocations: 7431)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 8.0ms | Allocations: 9082)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for Mon, 06 Jul 2020 00:00:00 UTC +00:00:Time):
+    159:                                     <ul class="entry__meta">
+    160:                                         <li><a href="#0"><%=@posts[2].address%></a></li>
+    161:                                         <% d = @posts[2].date_limite %>
+    162:                                         <li><%=d[0..7]%></li>
+    163:                                     </ul>
+    164:                                 </div>
+    165:                             </div> <!-- end entry__content -->
+  
+app/views/home/index.html.erb:162
+Started GET "/" for ::1 at 2020-07-09 22:37:47 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (2.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:123
+  [1m[36mGenre Load (3.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:150
+  Rendered home/index.html.erb within layouts/application (Duration: 52.7ms | Allocations: 5420)
+Completed 200 OK in 86ms (Views: 66.5ms | ActiveRecord: 10.2ms | Allocations: 8602)
+
+
+Started GET "/" for ::1 at 2020-07-09 22:39:27 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:123
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:150
+  Rendered home/index.html.erb within layouts/application (Duration: 53.4ms | Allocations: 5427)
+Completed 200 OK in 90ms (Views: 76.7ms | ActiveRecord: 4.1ms | Allocations: 8603)
+
+
+Started GET "/" for ::1 at 2020-07-09 22:48:45 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1707)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.4ms | Allocations: 3524)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 	<!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header header">
+
+        <div class="header__logo">
+            <a class="logo" href="<% root_path %>">
+                <img src="home/images/LOGO.png" alt="Homepage">
+            </a>
+        </div> <!-- end header__logo -->
+
+        <a class="header__search-trigger" href="#"></a>
+
+        <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+        <nav class="header__nav-wrap">
+
+            <h2 class="header__nav-heading h6">Menu</h2>
+
+            <ul class="header__nav">
+                <li class="has-children">
+                    <a href="#0" title="">Province</a>
+                    <ul class="sub-menu">
+                    	<li><a href="category.html">Antananarivo</a></li>
+                        <li><a href="category.html">Antsiranana</a></li>
+                        <li><a href="category.html">Mahajanga</a></li>
+                        <li><a href="category.html">Toamasina</a></li>
+                        <li><a href="category.html">Fianarantsoa</a></li>
+                        <li><a href="category.html">Toliara</a></li>
+                    </ul>
+                <li class="has-children">
+                    <a href="#0" title="">Tout les evenemets</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">Sport</a></li>
+                        <li><a href="category.html">Cabaret</a></li>
+                        <li><a href="category.html">Spectacle</a></li>
+                        <li><a href="category.html">Soirée</a></li>
+                        <li><a href="category.html">Festival</a></li>
+                        <li><a href="category.html">Scolaire</a></li>
+                        <li><a href="category.html">Lifestyle</a></li>
+                        <li><a href="category.html">Foire</a></li>
+                        <li><a href="category.html">Salon</a></li>
+                        <li><a href="category.html">Teatre</a></li>
+                        <li><a href="category.html">Evangelique</a></li>
+                        <li><a href="category.html">Balle</a></li>
+                    </ul>
+                </li>
+
+                <% if(user_signed_in?) %>
+                <li class="has-children">
+                    <%if current_user.image?%>
+                        <a href="#0" title=""><img src="<%= current_user.image %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+                    <% else %>
+                        <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+                    <% end %>
+                    <ul class="sub-menu">
+                        <li><a href="edit_profil.html"><%= current_user.username.capitalize %></a> </li>
+                        <li><a href="<%= posts_path%>">Mes publications</a></li>
+                    <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
+                    </ul>
+                </li>
+                <% else %>
+                    <li><%= link_to "se connecter", new_user_session_path, style: "color: #15c4d4; font-size: 18px" %></li>
+                    <li><%= link_to "s'inscrire", new_user_registration_path(@user), style: "color: #68de4d; font-size: 16px" %></li>
+                <% end %>
+
+            </ul>
+
+            <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <section class="s-featured">
+        <div class="row">
+            <div class="col-full">
+
+                <div class="featured-slider featured" data-aos="zoom-in">
+
+                    <div class="featured__slide">
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= @posts[0].image%>');"></div>
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
+
+                                <h1><a href="#0" title=""><%=@posts[0].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-05.jpg" alt="">
+                                    </a>
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=@posts[0].address%></a></li>
+                                        <% d0 = @posts[0].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d0[5..15] 'à' @posts[0].hour.to_s%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                            
+                        </div> <!-- end entry -->
+                    </div> <!-- end featured__slide -->
+
+                    <div class="featured__slide">
+
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= @posts[1].image%>');"></div>
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=@posts[1].genres.first.list%></a></span>
+
+                                <h1><a href="#0" title=""><%=@posts[1].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=@posts[1].address%></a></li>
+                                        <% d1 = @posts[1].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d1[5..15] 'à' @posts[1].hour.to_s%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                            
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__slide -->
+
+                    <div class="featured__slide">
+
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= @posts[2].image%>');"></div>
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=@posts[2].genres.first.list%></a></span>
+
+                                <h1><a href="#0" title=""><%=@posts[2].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=@posts[2].address%></a></li>
+                                        <% d2 = @posts[2].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d2[5..15] 'à' @posts[2].hour.to_s%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__slide -->
+                    
+                </div> <!-- end featured -->
+
+            </div> <!-- end col-full -->
+        </div>
+    </section> <!-- end s-featured -->
+
+
+
+
+
+):
+1:    	<!-- preloader
+2:        ================================================== -->
+3:        <div id="preloader">
+4:            <div id="loader" class="dots-fade">
+5:                <div></div>
+6:                <div></div>
+7:                <div></div>
+8:            </div>
+9:        </div>
+10:    
+11:    
+12:        <!-- header
+13:        ================================================== -->
+14:        <header class="s-header header">
+15:    
+16:            <div class="header__logo">
+17:                <a class="logo" href="<% root_path %>">
+18:                    <img src="home/images/LOGO.png" alt="Homepage">
+19:                </a>
+20:            </div> <!-- end header__logo -->
+21:    
+22:            <a class="header__search-trigger" href="#"></a>
+23:    
+24:            <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+25:            <nav class="header__nav-wrap">
+26:    
+27:                <h2 class="header__nav-heading h6">Menu</h2>
+28:    
+29:                <ul class="header__nav">
+30:                    <li class="has-children">
+31:                        <a href="#0" title="">Province</a>
+32:                        <ul class="sub-menu">
+33:                        	<li><a href="category.html">Antananarivo</a></li>
+34:                            <li><a href="category.html">Antsiranana</a></li>
+35:                            <li><a href="category.html">Mahajanga</a></li>
+36:                            <li><a href="category.html">Toamasina</a></li>
+37:                            <li><a href="category.html">Fianarantsoa</a></li>
+38:                            <li><a href="category.html">Toliara</a></li>
+39:                        </ul>
+40:                    <li class="has-children">
+41:                        <a href="#0" title="">Tout les evenemets</a>
+42:                        <ul class="sub-menu">
+43:                            <li><a href="category.html">Sport</a></li>
+44:                            <li><a href="category.html">Cabaret</a></li>
+45:                            <li><a href="category.html">Spectacle</a></li>
+46:                            <li><a href="category.html">Soirée</a></li>
+47:                            <li><a href="category.html">Festival</a></li>
+48:                            <li><a href="category.html">Scolaire</a></li>
+49:                            <li><a href="category.html">Lifestyle</a></li>
+50:                            <li><a href="category.html">Foire</a></li>
+51:                            <li><a href="category.html">Salon</a></li>
+52:                            <li><a href="category.html">Teatre</a></li>
+53:                            <li><a href="category.html">Evangelique</a></li>
+54:                            <li><a href="category.html">Balle</a></li>
+55:                        </ul>
+56:                    </li>
+57:    
+58:                    <% if(user_signed_in?) %>
+59:                    <li class="has-children">
+60:                        <%if current_user.image?%>
+61:                            <a href="#0" title=""><img src="<%= current_user.image %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+62:                        <% else %>
+63:                            <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+64:                        <% end %>
+65:                        <ul class="sub-menu">
+66:                            <li><a href="edit_profil.html"><%= current_user.username.capitalize %></a> </li>
+67:                            <li><a href="<%= posts_path%>">Mes publications</a></li>
+68:                        <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
+69:                        </ul>
+70:                    </li>
+71:                    <% else %>
+72:                        <li><%= link_to "se connecter", new_user_session_path, style: "color: #15c4d4; font-size: 18px" %></li>
+73:                        <li><%= link_to "s'inscrire", new_user_registration_path(@user), style: "color: #68de4d; font-size: 16px" %></li>
+74:                    <% end %>
+75:    
+76:                </ul>
+77:    
+78:                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+79:    
+80:            </nav>
+81:    
+82:        </header>
+83:    
+84:    
+85:    
+86:        <section class="s-featured">
+87:            <div class="row">
+88:                <div class="col-full">
+89:    
+90:                    <div class="featured-slider featured" data-aos="zoom-in">
+91:    
+92:                        <div class="featured__slide">
+93:                            <div class="entry">
+94:    
+95:                                <div class="entry__background" style="background-image:url('<%= @posts[0].image%>');"></div>
+96:                                
+97:                                <div class="entry__content">
+98:                                    <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
+99:    
+100:                                    <h1><a href="#0" title=""><%=@posts[0].title%></a></h1>
+101:    
+102:                                    <div class="entry__info">
+103:                                        <a href="#0" class="entry__profile-pic">
+104:                                            <img class="avatar" src="images/avatars/user-05.jpg" alt="">
+105:                                        </a>
+106:                                        <ul class="entry__meta">
+107:                                            <li><a href="#0"><%=@posts[0].address%></a></li>
+108:                                            <% d0 = @posts[0].date_limite.to_formatted_s(:rfc822) %>
+109:                                            <li><%=d0[5..15] 'à' @posts[0].hour.to_s%></li>
+110:                                        </ul>
+111:                                    </div>
+112:                                </div> <!-- end entry__content -->
+113:                                
+114:                            </div> <!-- end entry -->
+115:                        </div> <!-- end featured__slide -->
+116:    
+117:                        <div class="featured__slide">
+118:    
+119:                            <div class="entry">
+120:    
+121:                                <div class="entry__background" style="background-image:url('<%= @posts[1].image%>');"></div>
+122:                                
+123:                                <div class="entry__content">
+124:                                    <span class="entry__category"><a href="#0"><%=@posts[1].genres.first.list%></a></span>
+125:    
+126:                                    <h1><a href="#0" title=""><%=@posts[1].title%></a></h1>
+127:    
+128:                                    <div class="entry__info">
+129:                                        <a href="#0" class="entry__profile-pic">
+130:                                            <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+131:                                        </a>
+132:    
+133:                                        <ul class="entry__meta">
+134:                                            <li><a href="#0"><%=@posts[1].address%></a></li>
+135:                                            <% d1 = @posts[1].date_limite.to_formatted_s(:rfc822) %>
+136:                                            <li><%=d1[5..15] 'à' @posts[1].hour.to_s%></li>
+137:                                        </ul>
+138:                                    </div>
+139:                                </div> <!-- end entry__content -->
+140:                                
+141:                            </div> <!-- end entry -->
+142:    
+143:                        </div> <!-- end featured__slide -->
+144:    
+145:                        <div class="featured__slide">
+146:    
+147:                            <div class="entry">
+148:    
+149:                                <div class="entry__background" style="background-image:url('<%= @posts[2].image%>');"></div>
+150:    
+151:                                <div class="entry__content">
+152:                                    <span class="entry__category"><a href="#0"><%=@posts[2].genres.first.list%></a></span>
+153:    
+154:                                    <h1><a href="#0" title=""><%=@posts[2].title%></a></h1>
+155:    
+156:                                    <div class="entry__info">
+157:                                        <a href="#0" class="entry__profile-pic">
+158:                                            <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+159:                                        </a>
+160:    
+161:                                        <ul class="entry__meta">
+162:                                            <li><a href="#0"><%=@posts[2].address%></a></li>
+163:                                            <% d2 = @posts[2].date_limite.to_formatted_s(:rfc822) %>
+164:                                            <li><%=d2[5..15] 'à' @posts[2].hour.to_s%></li>
+165:                                        </ul>
+166:                                    </div>
+167:                                </div> <!-- end entry__content -->
+168:    
+169:                            </div> <!-- end entry -->
+170:    
+171:                        </div> <!-- end featured__slide -->
+172:                        
+173:                    </div> <!-- end featured -->
+174:    
+175:                </div> <!-- end col-full -->
+176:            </div>
+177:        </section> <!-- end s-featured -->
+  
+app/views/home/index.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:109: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:136: syntax error, unexpected tIVAR, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/home/index.html.erb:164: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/" for ::1 at 2020-07-09 22:50:59 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (5.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:124
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:152
+  Rendered home/index.html.erb within layouts/application (Duration: 55.6ms | Allocations: 5516)
+Completed 200 OK in 93ms (Views: 66.0ms | ActiveRecord: 10.4ms | Allocations: 8706)
+
+
+Started GET "/" for ::1 at 2020-07-09 22:52:15 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (9.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mGenre Load (4.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:124
+  [1m[36mGenre Load (9.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:152
+  Rendered home/index.html.erb within layouts/application (Duration: 76.8ms | Allocations: 5510)
+Completed 200 OK in 120ms (Views: 84.0ms | ActiveRecord: 28.1ms | Allocations: 8682)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-07-09 23:01:20 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (2.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 90.3ms | Allocations: 8773)
+Completed 200 OK in 142ms (Views: 123.5ms | ActiveRecord: 9.8ms | Allocations: 12108)
+
+
+Started GET "/images/icons/user-icon.png" for ::1 at 2020-07-09 23:01:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/icons/user-icon.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/images/icons/user-icon.png" for ::1 at 2020-07-09 23:01:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/icons/user-icon.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/images/icons/user-icon.png" for ::1 at 2020-07-09 23:01:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/icons/user-icon.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 23:03:24 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (2.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (6.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 102.2ms | Allocations: 8001)
+Completed 200 OK in 124ms (Views: 99.5ms | ActiveRecord: 16.6ms | Allocations: 11184)
+
+
+Started GET "/" for ::1 at 2020-07-09 23:05:19 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:10:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (5.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (4.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 77.1ms | Allocations: 6994)
+Completed 200 OK in 105ms (Views: 78.0ms | ActiveRecord: 21.1ms | Allocations: 9512)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 23:09:17 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 240)
+Completed 200 OK in 248ms (Views: 14.8ms | ActiveRecord: 43.0ms | Allocations: 28002)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-09 23:09:53 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/new.html.erb within layouts/new_post
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/new.html.erb:16:in `collect'
+  Rendered posts/new.html.erb within layouts/new_post (Duration: 91.5ms | Allocations: 13240)
+Completed 200 OK in 120ms (Views: 85.8ms | ActiveRecord: 14.5ms | Allocations: 15264)
+
+
+Started GET "/posts/vendor/bootstrap/js/popper.js.map" for ::1 at 2020-07-09 23:09:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/posts/vendor/bootstrap/js/popper.js.map"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/posts" for ::1 at 2020-07-09 23:13:00 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"xDMzZPeZsisLDTrJYBZfg6j0BFOuR9TI+DYsDMBTMsVDH9BS+A1GBHzMjIwBYnvXwphC3hCVHGIO3JC+yu7tVg==", "post"=>{"title"=>"Test image", "city_id"=>"1", "address"=>"Mahamasina", "date_limite"=>"2020-07-17", "hour"=>"01:14", "description"=>"fety be", "user_id"=>"1", "price"=>"200", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f3d0472b418 @tempfile=#<Tempfile:/tmp/RackMultipart20200709-15891-1mqibkp.png>, @original_filename="sad-man-238x300.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"sad-man-238x300.png\"\r\nContent-Type: image/png\r\n">}, "list"=>{"sport"=>"no", "spectacle"=>"no", "cabaret"=>"no", "soiree"=>"yes", "balle"=>"no", "scolaire"=>"no", "festival"=>"no", "foire"=>"no", "salon"=>"no", "teatre"=>"no", "evangelique"=>"no"}, "commit"=>"Créer"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mCity Load (2.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Create (3.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "address", "date_limite", "hour", "description", "price", "image", "user_id", "city_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "Test image"], ["address", "Mahamasina"], ["date_limite", "2020-07-17 00:00:00"], ["hour", "01:14"], ["description", "fety be"], ["price", "200"], ["image", "image.jpg"], ["user_id", 1], ["city_id", 1], ["created_at", "2020-07-09 20:13:00.862453"], ["updated_at", "2020-07-09 20:13:00.862453"]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mGenre Load (2.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."list" = $1[0m  [["list", "soiree"]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (9.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[36mPost::HABTM_Genres Create (5.2ms)[0m  [1m[32mINSERT INTO "genres_posts" ("genre_id", "post_id") VALUES ($1, $2)[0m  [["genre_id", 4], ["post_id", 4]]
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block in create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 307ms (ActiveRecord: 74.0ms | Allocations: 27851)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 23:13:01 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 41)
+Completed 200 OK in 40ms (Views: 22.2ms | ActiveRecord: 7.6ms | Allocations: 2852)
+
+
+Started GET "/" for ::1 at 2020-07-09 23:13:41 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (2.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 75.9ms | Allocations: 7036)
+Completed 200 OK in 103ms (Views: 75.1ms | ActiveRecord: 16.1ms | Allocations: 9768)
+
+
+Started GET "/" for ::1 at 2020-07-09 23:15:30 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 222.5ms | Allocations: 25662)
+Completed 200 OK in 342ms (Views: 205.1ms | ActiveRecord: 49.4ms | Allocations: 42786)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 23:17:45 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 559)
+Completed 200 OK in 36ms (Views: 21.0ms | ActiveRecord: 3.4ms | Allocations: 4485)
+
+
+Started GET "/" for ::1 at 2020-07-09 23:18:06 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 86.7ms | Allocations: 8005)
+Completed 200 OK in 111ms (Views: 89.6ms | ActiveRecord: 7.7ms | Allocations: 10832)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 23:18:23 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 134)
+Completed 200 OK in 41ms (Views: 30.8ms | ActiveRecord: 3.8ms | Allocations: 2949)
+
+
+Started GET "/posts" for ::1 at 2020-07-09 23:19:21 +0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42:in `user_connect'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 531)
+Completed 200 OK in 30ms (Views: 15.1ms | ActiveRecord: 0.6ms | Allocations: 4385)
+
+
+Started GET "/" for ::1 at 2020-07-09 23:19:29 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (4.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (2.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 90.2ms | Allocations: 8008)
+Completed 200 OK in 122ms (Views: 83.1ms | ActiveRecord: 19.4ms | Allocations: 10833)
+
+
+Started GET "/" for ::1 at 2020-07-09 23:26:01 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:104
+  [1m[36mGenre Load (2.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:134
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:166
+  Rendered home/index.html.erb within layouts/application (Duration: 256.6ms | Allocations: 33489)
+Completed 200 OK in 1127ms (Views: 805.2ms | ActiveRecord: 75.4ms | Allocations: 83649)
+
+
+Started GET "/" for ::1 at 2020-07-09 23:29:51 +0300
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (4.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:58
+  [1m[36mGenre Load (1.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:103
+  [1m[36mGenre Load (2.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:133
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:165
+  Rendered home/index.html.erb within layouts/application (Duration: 106.9ms | Allocations: 8077)
+Completed 200 OK in 140ms (Views: 116.8ms | ActiveRecord: 13.1ms | Allocations: 11277)
+
+
+Started GET "/Franklin" for ::1 at 2020-07-09 23:30:11 +0300
+Processing by ProfilController#index as HTML
+  Parameters: {"user_name"=>"Franklin"}
+  Rendering profil/index.html.erb within layouts/profil
+  Rendered profil/index.html.erb within layouts/profil (Duration: 1.1ms | Allocations: 91)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 87ms (Views: 82.2ms | ActiveRecord: 0.0ms | Allocations: 5812)
+
+

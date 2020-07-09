@@ -2622,7 +2622,7 @@ body.search-is-visible {
 }
 
 .featured__slide .entry__profile-pic img {
-  border-radius: 50%;
+  border-radius: 100%%;
 }
 
 .featured__slide .entry__meta {
@@ -2642,7 +2642,7 @@ body.search-is-visible {
 }
 
 .featured__slide .entry__meta li::after {
-  content: '\2022';
+  content: 'le';
   margin-left: 9px;
   margin-right: 6px;
 }
