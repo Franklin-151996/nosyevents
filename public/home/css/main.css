@@ -91,13 +91,13 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-  color: #1d28a1;
+  color: #3DC1CF;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 a:hover, a:focus, a:active {
-  color: #7b287d;
+  color: #C740CB;
 }
 
 a:hover, a:active {
@@ -553,7 +553,7 @@ form,
   left: 0;
   right: 0;
   bottom: 0;
-  background: #FFFFFF;
+  background: #121212;
   z-index: 800;
   height: 100vh;
   width: 100%;
@@ -579,7 +579,7 @@ form,
 
 #loader > div {
   content: "";
-  background: #000000;
+  background: #fff;
   width: 6px;
   height: 6px;
   position: absolute;
@@ -1295,20 +1295,20 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   padding: .3rem 1.2rem;
   height: 3.6rem;
   margin: .3rem .15rem;
-  color: #000000;
+  color: #fff;
   border-radius: 3px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .pgn__num:hover {
-  background: #DDDDDD;
-  color: #000000;
+  background: #242526;
+  color: #fff;
 }
 
 .pgn .current, .pgn .current:hover {
-  background-color: #111860;
-  color: white;
+  background-color: #242526;
+  color: #FFFFFF;
 }
 
 .pgn .inactive, .pgn .inactive:hover {
@@ -1544,7 +1544,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .entries .item-entry {
   height: 100%;
-  background-color: #FFFFFF;
+  background-color: #242526;
   padding-bottom: 6rem;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -1637,7 +1637,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .entries .item-entry__title a {
-  color: #000000;
+  color: #fff;
   border-bottom: 1px solid transparent;
 }
 
@@ -1674,7 +1674,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .entries .item-entry__date a {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .entries-wrap + .pagination-wrap {
@@ -2633,7 +2633,7 @@ body.search-is-visible {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255);
 }
 
 .featured__slide .entry__meta li {
@@ -2849,7 +2849,7 @@ body.search-is-visible {
  *
  * ------------------------------------------------------------------- */
 .s-content {
-  background-color: #f2f2f2;
+  background-color: #121212;
   padding-top: 6rem;
   padding-bottom: 7.2rem;
 }
@@ -3158,11 +3158,12 @@ footer {
   padding-bottom: 10.2rem;
   font-size: 1.5rem;
   line-height: 2;
-  color: rgba(255, 255, 255, 0.5);
+  background-color: #242526;
+  color: #fff;
 }
 
 footer a {
-  color: #FFFFFF !important;
+  color: ##0BFFD7FF !important;
 }
 
 footer h4 {

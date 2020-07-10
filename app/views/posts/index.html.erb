@@ -63,7 +63,7 @@
                         <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
                     <% end %>
                     <ul class="sub-menu">
-                        <li><a href="/<%= current_user.username%>"><%= current_user.username.capitalize %></a> </li>
+                        <li><a href="/users/<%= current_user.username%>"><%= current_user.username.capitalize %></a> </li>
                         <li><a href="<%= posts_path%>">Mes publications</a></li>
                     <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
                     </ul>

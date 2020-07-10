@@ -30,35 +30,35 @@
                 <li class="has-children">
                     <a href="#0" title="">Province</a>
                     <ul class="sub-menu">
-                    	<li><a href="category.html">Antananarivo</a></li>
-                        <li><a href="category.html">Antsiranana</a></li>
-                        <li><a href="category.html">Mahajanga</a></li>
-                        <li><a href="category.html">Toamasina</a></li>
-                        <li><a href="category.html">Fianarantsoa</a></li>
-                        <li><a href="category.html">Toliara</a></li>
+                    	<li><a href="#">Antananarivo</a></li>
+                        <li><a href="#">Antsiranana</a></li>
+                        <li><a href="#">Mahajanga</a></li>
+                        <li><a href="#">Toamasina</a></li>
+                        <li><a href="#">Fianarantsoa</a></li>
+                        <li><a href="#">Toliara</a></li>
                     </ul>
                 <li class="has-children">
                     <a href="#0" title="">Tout les evenemets</a>
                     <ul class="sub-menu">
-                        <li><a href="category.html">Sport</a></li>
-                        <li><a href="category.html">Cabaret</a></li>
-                        <li><a href="category.html">Spectacle</a></li>
-                        <li><a href="category.html">Soirée</a></li>
-                        <li><a href="category.html">Festival</a></li>
-                        <li><a href="category.html">Scolaire</a></li>
-                        <li><a href="category.html">Lifestyle</a></li>
-                        <li><a href="category.html">Foire</a></li>
-                        <li><a href="category.html">Salon</a></li>
-                        <li><a href="category.html">Teatre</a></li>
-                        <li><a href="category.html">Evangelique</a></li>
-                        <li><a href="category.html">Balle</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Cabaret</a></li>
+                        <li><a href="#">Spectacle</a></li>
+                        <li><a href="#">Soirée</a></li>
+                        <li><a href="#">Festival</a></li>
+                        <li><a href="#">Scolaire</a></li>
+                        <li><a href="#">Conference</a></li>
+                        <li><a href="#">Foire</a></li>
+                        <li><a href="#">Salon</a></li>
+                        <li><a href="#">Teatre</a></li>
+                        <li><a href="#">Evangelique</a></li>
+                        <li><a href="#">Balle</a></li>
                     </ul>
                 </li>
 
                 <% if(user_signed_in?) %>
                 <li class="has-children">
                     <%if current_user.image?%>
-                        <a href="#0" title=""><img src="<%= current_user.image %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+                        <a href="#0" title=""><img src="<%= current_user.image_url %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
                     <% else %>
                         <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
                     <% end %>
@@ -81,7 +81,7 @@
 
     </header>
 
-
+<% if @posts != nil %>
 
     <section class="s-featured">
         <div class="row">
@@ -92,7 +92,7 @@
                     <div class="featured__slide">
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('<%= @posts[0].image%>');"></div>
+                            <div class="entry__background" style="background-image:url('<%= @posts[0].image_url%>');"></div>
                             
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
@@ -100,9 +100,9 @@
                                 <h1><a href="#0" title=""><%=@posts[0].title%></a></h1>
 
                                 <div class="entry__info">
-                                    <a href="/<%=@posts[0].user.username%>" class="entry__profile-pic">
+                                    <a href="/profil/<%=@posts[0].user.username%>" class="entry__profile-pic">
                                         <% if @posts[0].user.image?%>
-                                            <img class="avatar" src="<%=@posts[0].user.image%>" alt="">
+                                            <img class="avatar" src="<%=@posts[0].user.image_url%>" alt="">
                                         <%else%>
                                             <img class="avatar" src="images/icons/user-icon.png" alt="">
                                         <%end%>                                           
@@ -122,7 +122,7 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('<%= @posts[1].image%>');"></div>
+                            <div class="entry__background" style="background-image:url('<%= @posts[1].image_url%>');"></div>
                             
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"><%=@posts[1].genres.first.list%></a></span>
@@ -130,9 +130,9 @@
                                 <h1><a href="#0" title=""><%=@posts[1].title%></a></h1>
 
                                 <div class="entry__info">
-                                    <a href="/<%=@posts[1].user.username%>" class="entry__profile-pic">
+                                    <a href="/profil/<%=@posts[1].user.username%>" class="entry__profile-pic">
                                         <% if @posts[1].user.image?%>
-                                            <img class="avatar" src="<%=@posts[1].user.image%>" alt="">
+                                            <img class="avatar" src="<%=@posts[1].user.image_url%>" alt="">
                                         <%else%>
                                             <img class="avatar" src="images/icons/user-icon.png" alt="">
                                         <%end%> 
@@ -154,26 +154,26 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('<%= @posts[3].image%>');"></div>
+                            <div class="entry__background" style="background-image:url('<%= @posts[2].image_url%>');"></div>
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0"><%=@posts[3].genres.first.list%></a></span>
+                                <span class="entry__category"><a href="#0"><%=@posts[2].genres.first.list%></a></span>
 
-                                <h1><a href="#0" title=""><%=@posts[3].title%></a></h1>
+                                <h1><a href="#0" title=""><%=@posts[2].title%></a></h1>
 
                                 <div class="entry__info">
-                                    <a href="/<%=@posts[3].user.username%>" class="entry__profile-pic">
-                                        <% if @posts[3].user.image?%>
-                                            <img class="avatar" src="<%=@posts[3].user.image%>" alt="">
+                                    <a href="/profil/<%=@posts[2].user.username%>" class="entry__profile-pic">
+                                        <% if @posts[2].user.image?%>
+                                            <img class="avatar" src="<%=@posts[2].user.image_url%>" alt="">
                                         <%else%>
                                             <img class="avatar" src="images/icons/user-icon.png" alt="">
                                         <%end%> 
                                     </a>
 
                                     <ul class="entry__meta">
-                                        <li><a href="#0"><%=@posts[3].address.capitalize%></a></li>
-                                        <% d2 = @posts[3].date_limite.to_formatted_s(:rfc822) %>
-                                        <li><%=d2[5..15] +' à '+ @posts[3].hour%></li>
+                                        <li><a href="#0"><%=@posts[2].address.capitalize%></a></li>
+                                        <% d2 = @posts[2].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d2[5..15] +' à '+ @posts[2].hour%></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->
@@ -188,6 +188,119 @@
         </div>
     </section> <!-- end s-featured -->
 
+<!----------------------------------------------------------------------------------------------------------------------->
+    <section class="s-content">
+        
+        <div class="row entries-wrap wide">
+            <div class="entries">
+
+                <% @posts.each do |post| %>
+
+                <article class="col-block">
+                    
+                    <div class="item-entry" data-aos="zoom-in">
+                        <div class="item-entry__thumb">
+                            <a href="single-standard.html" class="item-entry__thumb-link">
+                                <img src="<%= post.image_url(:image_400)%>" 
+                                     srcset="<%= post.image_url(:image_400)%> 1x, <%= post.image_url(:image_900)%> 2x" alt="">
+                            </a>
+                        </div>
+        
+                        <div class="item-entry__text">    
+                            <div class="item-entry__cat">
+                                <a href="category.html"><%=post.genres.first.list%></a> 
+                            </div>
+    
+                            <h1 class="item-entry__title"><a href="single-standard.html"><%=post.title%></a></h1>
+                                
+                            <div class="item-entry__date">
+                                <% d2 = post.date_limite.to_formatted_s(:rfc822) %>
+                                <a href="#0"><%=post.address.capitalize%> <%=d2[5..15] +' à '+ @posts[0].hour%></a>
+                            </div>
+                        </div>
+                    </div> <!-- item-entry -->
+
+                </article> <!-- end article -->
+
+            <% end %><!------------------end each--------------------->
+                
+            </div> <!-- end entries -->
+        </div> <!-- end entries-wrap -->
+
+    </section> <!-- end s-content -->
+
+<%else%>
+    
+    <br><br><br><br><center><h2>Pas d'evenement a afficher</h2></center><br>
+    <center><h2><%= link_to "Connecter", new_user_session_path, style: "color: #15c4d4; font-size: 30px" %> vous pour poster des evenements <br>sur nosyevents</h2></center><br>
+
+<% end %>
 
 
 
+
+
+    <!-- s-foote
+    =========================================================================================================================== -->
+    <footer class="s-footer">
+
+        <div class="s-footer__main">
+            <div class="row">
+                
+                <div class="col-six tab-full s-footer__about">
+                        
+                    <h4>A propos de nosyevents</h4>
+
+                    <p>.....................................................................................
+                        .......................................................................................
+                        .............................................................................................</p>
+
+                </div> <!-- end s-footer__about -->
+
+                <div class="col-six tab-full s-footer__subscribe">
+                        
+                    <h4>Des problemes sur nosyevents?</h4>
+
+                    <p>Envoyer nous un <a href="mailto:nosyevents@gmail.com">Email</a> pour vous aidez a resoudre le probleme</p><br>
+                    <a href="#">Comment utiliser ce site</a><br>
+
+                </div> <!-- end s-footer__subscribe -->
+
+            </div>
+        </div> <!-- end s-footer__main -->
+
+        <div class="s-footer__bottom">
+            <div class="row">
+
+                <div class="col-six">
+                    <ul class="footer-social">
+                        <li>
+                            <a href="#0"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#0"><i class="fab fa-twitter"></i></a>
+                        </li>
+
+                        <li>
+                            <a href="#0"><i class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-six">
+                    <div class="s-footer__copyright">
+                        <span>
+                            Copyright Nosyevents 2020
+
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div> <!-- end s-footer__bottom -->
+
+        <div class="go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top"></a>
+        </div>
+
+    </footer> <!-- end s-footer -->

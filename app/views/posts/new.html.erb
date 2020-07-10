@@ -38,24 +38,23 @@
 
 					<div class="wrap-input100 validate-input m-b-16" style="white-space: pre;">
 						<label>Type d'evenement</label><br>
-<%= check_box("list", "sport", {}, "yes", "no")  %> sport            <%= check_box("list", "spectacle", {}, "yes", "no")  %> spectacle        
-<%= check_box("list", "cabaret", {}, "yes", "no")  %> cabaret       <%= check_box("list", "soiree", {}, "yes", "no")  %> soiree
-<%= check_box("list", "balle", {}, "yes", "no")  %> balle             <%= check_box("list", "scolaire", {}, "yes", "no")  %> scolaire          
-<%= check_box("list", "festival", {}, "yes", "no")  %> festival         <%= check_box("list", "foire", {}, "yes", "no")  %> foire
-<%= check_box("list", "salon", {}, "yes", "no")  %> salon            <%= check_box("list", "teatre", {}, "yes", "no")  %> teatre        <%= check_box("list", "evangelique", {}, "yes", "no")  %> evangelique
+<%= check_box("list", "sport", {}, "yes", "no")  %> sport             <%= check_box("list", "spectacle", {}, "yes", "no")  %> spectacle    <%= check_box("list", "concert", {}, "yes", "no")  %> concert     
+<%= check_box("list", "cabaret", {}, "yes", "no")  %> cabaret       <%= check_box("list", "soiree", {}, "yes", "no")  %> soiree            <%= check_box("list", "diner dansant", {}, "yes", "no")  %> diner dansant
+<%= check_box("list", "balle", {}, "yes", "no")  %> balle              <%= check_box("list", "scolaire", {}, "yes", "no")  %> scolaire        <%= check_box("list", "course", {}, "yes", "no")  %> course          
+<%= check_box("list", "festival", {}, "yes", "no")  %> festival         <%= check_box("list", "foire", {}, "yes", "no")  %> foire               <%= check_box("list", "conference", {}, "yes", "no")  %> conference
+<%= check_box("list", "salon", {}, "yes", "no")  %> salon             <%= check_box("list", "teatre", {}, "yes", "no")  %> teatre           <%= check_box("list", "evangelique", {}, "yes", "no")  %> evangelique
   					</div>
 
   					  <%= f.hidden_field :user_id, value: current_user.id %>
 
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "prix d'entrer obligatoire">
+					<div class="wrap-input100 validate-input m-b-16">
 						<label>prix d'entrer en ariary</label>
-					    <%= f.number_field :price, autofocus: true, min: 100, max: 90000000, step: 100, class: "input100"%>
+					    <%= f.number_field :price, autofocus: true, min: 100, max: 90000000, step: 100, class: "input100", placeholder: "ignorer si entrer libre"%>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Image obligatoire">
 						<label>Image pour la publicité</label>
 						<%= f.file_field :image, as: :file %>
-
 					</div>
 					
 					<div class="container-login100-form-btn p-t-25">
