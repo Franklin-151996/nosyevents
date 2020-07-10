@@ -69,3 +69,4 @@ gem 'omniauth-google-oauth2', '~> 0.8.0'
 
 gem 'sprockets', '~> 4'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'dotenv-rails'

@@ -45385,3 +45385,1082 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 103ms (Views: 92.5ms | ActiveRecord: 5.1ms | Allocations: 15153)
 
 
+Started GET "/" for ::1 at 2020-07-10 22:44:33 +0300
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/home/index.html.erb:95
+  [1m[36mGenre Load (3.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:98
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:103
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:128
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:133
+  [1m[36mGenre Load (4.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:160
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:165
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:211
+  [1m[36mCACHE Genre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:211
+  [1m[36mCACHE Genre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:211
+  [1m[36mGenre Load (8.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1 ORDER BY "genres"."id" ASC LIMIT $2[0m  [["post_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:211
+  Rendered home/index.html.erb within layouts/application (Duration: 502.8ms | Allocations: 48369)
+Completed 200 OK in 1183ms (Views: 852.0ms | ActiveRecord: 72.6ms | Allocations: 94458)
+
+
+Started GET "/uploads/post/4/image_400_image.jpg" for ::1 at 2020-07-10 22:44:35 +0300
+Started GET "/uploads/post/5/image_400_image.jpg" for ::1 at 2020-07-10 22:44:35 +0300
+Started GET "/uploads/post/6/image_400_image.jpg" for ::1 at 2020-07-10 22:44:35 +0300
+Started GET "/uploads/post/7/image_400_image.jpg" for ::1 at 2020-07-10 22:44:35 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/post/4/image_400_image.jpg"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/uploads/post/4/image.jpg" for ::1 at 2020-07-10 22:44:35 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/post/5/image_400_image.jpg"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/post/7/image_400_image.jpg"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/post/6/image_400_image.jpg"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/post/4/image.jpg"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/uploads/post/6/image.jpg" for ::1 at 2020-07-10 22:44:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/post/6/image.jpg"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/uploads/post/5/image.jpg" for ::1 at 2020-07-10 22:44:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/post/5/image.jpg"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (379.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_development"[0m
+  [1m[35m (345.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_test"[0m
+  [1m[35m (1263.0ms)[0m  [1m[35mCREATE DATABASE "nosyevents_development" ENCODING = 'unicode'[0m
+  [1m[35m (1074.0ms)[0m  [1m[35mCREATE DATABASE "nosyevents_test" ENCODING = 'unicode'[0m
+  [1m[35m (160.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (105.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8448003242917868070)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200701214827)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (125.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "image" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (35.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701214827"]]
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdmins (20200701214852)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (112.3ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "username" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  [1m[35m (37.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701214852"]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCities (20200701215136)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (82.7ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "ville" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215136"]]
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGenres (20200701215145)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (105.3ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "list" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215145"]]
+  [1m[35m (18.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20200701215154)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (93.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "address" character varying, "date_limite" timestamp, "hour" character varying, "description" text, "price" character varying, "payer" boolean DEFAULT FALSE, "image" character varying, "user_id" bigint, "city_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (47.0ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_user_id" ON "posts"  ("user_id")[0m
+  [1m[35m (35.8ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_city_id" ON "posts"  ("city_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215154"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to GenresPosts (20200701215222)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "genres_posts" ("genre_id" bigint, "post_id" bigint)[0m
+  [1m[35m (38.2ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_genre_id" ON "genres_posts"  ("genre_id")[0m
+  [1m[35m (48.8ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_post_id" ON "genres_posts"  ("post_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200701215222"]]
+  [1m[35m (37.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-10 19:46:16.150485"], ["updated_at", "2020-07-10 19:46:16.150485"]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(8448003242917868070)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (1.4ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "ANTANANARIVO"], ["created_at", "2020-07-10 19:46:35.213326"], ["updated_at", "2020-07-10 19:46:35.213326"]]
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "MAHAJANGA"], ["created_at", "2020-07-10 19:46:35.239351"], ["updated_at", "2020-07-10 19:46:35.239351"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "TOAMASINA"], ["created_at", "2020-07-10 19:46:35.260838"], ["updated_at", "2020-07-10 19:46:35.260838"]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.9ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "ANTSIRANANA"], ["created_at", "2020-07-10 19:46:35.283095"], ["updated_at", "2020-07-10 19:46:35.283095"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (8.2ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "FIANARANTSOA"], ["created_at", "2020-07-10 19:46:35.305255"], ["updated_at", "2020-07-10 19:46:35.305255"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "TOLIARA"], ["created_at", "2020-07-10 19:46:35.338524"], ["updated_at", "2020-07-10 19:46:35.338524"]]
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (11.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.5ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "sport"], ["created_at", "2020-07-10 19:46:35.452650"], ["updated_at", "2020-07-10 19:46:35.452650"]]
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (8.6ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "course"], ["created_at", "2020-07-10 19:46:35.505325"], ["updated_at", "2020-07-10 19:46:35.505325"]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (7.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "spectacle"], ["created_at", "2020-07-10 19:46:35.538573"], ["updated_at", "2020-07-10 19:46:35.538573"]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "concert"], ["created_at", "2020-07-10 19:46:35.572730"], ["updated_at", "2020-07-10 19:46:35.572730"]]
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "cabaret"], ["created_at", "2020-07-10 19:46:35.594918"], ["updated_at", "2020-07-10 19:46:35.594918"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "soirée"], ["created_at", "2020-07-10 19:46:35.616873"], ["updated_at", "2020-07-10 19:46:35.616873"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "diner dansant"], ["created_at", "2020-07-10 19:46:35.638775"], ["updated_at", "2020-07-10 19:46:35.638775"]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (9.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "balle"], ["created_at", "2020-07-10 19:46:35.672034"], ["updated_at", "2020-07-10 19:46:35.672034"]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (4.4ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "scolaire"], ["created_at", "2020-07-10 19:46:35.705520"], ["updated_at", "2020-07-10 19:46:35.705520"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (8.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "festival"], ["created_at", "2020-07-10 19:46:35.727571"], ["updated_at", "2020-07-10 19:46:35.727571"]]
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "foire"], ["created_at", "2020-07-10 19:46:35.770415"], ["updated_at", "2020-07-10 19:46:35.770415"]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (7.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "salon"], ["created_at", "2020-07-10 19:46:35.805706"], ["updated_at", "2020-07-10 19:46:35.805706"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "teatre"], ["created_at", "2020-07-10 19:46:35.838780"], ["updated_at", "2020-07-10 19:46:35.838780"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "conference"], ["created_at", "2020-07-10 19:46:35.872111"], ["updated_at", "2020-07-10 19:46:35.872111"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "evangelique"], ["created_at", "2020-07-10 19:46:35.894340"], ["updated_at", "2020-07-10 19:46:35.894340"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-07-10 23:01:16 +0300
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/home/index.html.erb:95
+  Rendered home/index.html.erb within layouts/application (Duration: 55.7ms | Allocations: 5417)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 11.1ms | Allocations: 15969)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for nil:NilClass):
+    92:                     <div class="featured__slide">
+    93:                         <div class="entry">
+    94: 
+    95:                             <div class="entry__background" style="background-image:url('<%= @posts[0].image_url%>');"></div>
+    96:                             
+    97:                             <div class="entry__content">
+    98:                                 <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
+  
+app/views/home/index.html.erb:95
+Started GET "/" for ::1 at 2020-07-10 23:04:04 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (4.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/home/index.html.erb:84:in `all?'
+  Rendered home/index.html.erb within layouts/application (Duration: 23.6ms | Allocations: 3531)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 4.5ms | Allocations: 4482)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for nil:NilClass):
+    92:                     <div class="featured__slide">
+    93:                         <div class="entry">
+    94: 
+    95:                             <div class="entry__background" style="background-image:url('<%= @posts[0].image_url%>');"></div>
+    96:                             
+    97:                             <div class="entry__content">
+    98:                                 <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
+  
+app/views/home/index.html.erb:95
+Started GET "/" for ::1 at 2020-07-10 23:04:23 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 2323)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms | Allocations: 3237)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 	<!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header header">
+
+        <div class="header__logo">
+            <a class="logo" href="<% root_path %>">
+                <img src="home/images/LOGO.png" alt="Homepage">
+            </a>
+        </div> <!-- end header__logo -->
+
+        <a class="header__search-trigger" href="#"></a>
+
+        <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+        <nav class="header__nav-wrap">
+
+            <h2 class="header__nav-heading h6">Menu</h2>
+
+            <ul class="header__nav">
+                <li class="has-children">
+                    <a href="#0" title="">Province</a>
+                    <ul class="sub-menu">
+                    	<li><a href="#">Antananarivo</a></li>
+                        <li><a href="#">Antsiranana</a></li>
+                        <li><a href="#">Mahajanga</a></li>
+                        <li><a href="#">Toamasina</a></li>
+                        <li><a href="#">Fianarantsoa</a></li>
+                        <li><a href="#">Toliara</a></li>
+                    </ul>
+                <li class="has-children">
+                    <a href="#0" title="">Tout les evenemets</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Cabaret</a></li>
+                        <li><a href="#">Spectacle</a></li>
+                        <li><a href="#">Soirée</a></li>
+                        <li><a href="#">Festival</a></li>
+                        <li><a href="#">Scolaire</a></li>
+                        <li><a href="#">Conference</a></li>
+                        <li><a href="#">Foire</a></li>
+                        <li><a href="#">Salon</a></li>
+                        <li><a href="#">Teatre</a></li>
+                        <li><a href="#">Evangelique</a></li>
+                        <li><a href="#">Balle</a></li>
+                    </ul>
+                </li>
+
+                <% if(user_signed_in?) %>
+                <li class="has-children">
+                    <%if current_user.image?%>
+                        <a href="#0" title=""><img src="<%= current_user.image_url %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+                    <% else %>
+                        <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+                    <% end %>
+                    <ul class="sub-menu">
+                        <li><a href="/<%= current_user.username%>"><%= current_user.username.capitalize %></a> </li>
+                        <li><a href="<%= posts_path%>">Mes publications</a></li>
+                    <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
+                    </ul>
+                </li>
+                <% else %>
+                    <li><%= link_to "se connecter", new_user_session_path, style: "color: #15c4d4; font-size: 18px" %></li>
+                    <li><%= link_to "s'inscrire", new_user_registration_path(@user), style: "color: #68de4d; font-size: 16px" %></li>
+                <% end %>
+
+            </ul>
+
+            <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+
+        </nav>
+
+    </header>
+
+<% if @posts? %>
+
+    <section class="s-featured">
+        <div class="row">
+            <div class="col-full">
+
+                <div class="featured-slider featured" data-aos="zoom-in">
+
+                    <div class="featured__slide">
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= @posts[0].image_url%>');"></div>
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
+
+                                <h1><a href="#0" title=""><%=@posts[0].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="/profil/<%=@posts[0].user.username%>" class="entry__profile-pic">
+                                        <% if @posts[0].user.image?%>
+                                            <img class="avatar" src="<%=@posts[0].user.image_url%>" alt="">
+                                        <%else%>
+                                            <img class="avatar" src="images/icons/user-icon.png" alt="">
+                                        <%end%>                                           
+                                    </a>
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=@posts[0].address.capitalize%></a></li>
+                                        <% d0 = @posts[0].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d0[5..15] +' à '+ @posts[0].hour%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                            
+                        </div> <!-- end entry -->
+                    </div> <!-- end featured__slide -->
+
+                    <div class="featured__slide">
+
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= @posts[1].image_url%>');"></div>
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=@posts[1].genres.first.list%></a></span>
+
+                                <h1><a href="#0" title=""><%=@posts[1].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="/profil/<%=@posts[1].user.username%>" class="entry__profile-pic">
+                                        <% if @posts[1].user.image?%>
+                                            <img class="avatar" src="<%=@posts[1].user.image_url%>" alt="">
+                                        <%else%>
+                                            <img class="avatar" src="images/icons/user-icon.png" alt="">
+                                        <%end%> 
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=@posts[1].address.capitalize%></a></li>
+                                        <% d1 = @posts[1].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d1[5..15] +' à '+ @posts[1].hour%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                            
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__slide -->
+
+                    <div class="featured__slide">
+
+                        <div class="entry">
+
+                            <div class="entry__background" style="background-image:url('<%= @posts[2].image_url%>');"></div>
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0"><%=@posts[2].genres.first.list%></a></span>
+
+                                <h1><a href="#0" title=""><%=@posts[2].title%></a></h1>
+
+                                <div class="entry__info">
+                                    <a href="/profil/<%=@posts[2].user.username%>" class="entry__profile-pic">
+                                        <% if @posts[2].user.image?%>
+                                            <img class="avatar" src="<%=@posts[2].user.image_url%>" alt="">
+                                        <%else%>
+                                            <img class="avatar" src="images/icons/user-icon.png" alt="">
+                                        <%end%> 
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li><a href="#0"><%=@posts[2].address.capitalize%></a></li>
+                                        <% d2 = @posts[2].date_limite.to_formatted_s(:rfc822) %>
+                                        <li><%=d2[5..15] +' à '+ @posts[2].hour%></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__slide -->
+                    
+                </div> <!-- end featured -->
+
+            </div> <!-- end col-full -->
+        </div>
+    </section> <!-- end s-featured -->
+
+<!----------------------------------------------------------------------------------------------------------------------->
+    <section class="s-content">
+        
+        <div class="row entries-wrap wide">
+            <div class="entries">
+
+                <% @posts.each do |post| %>
+
+                <article class="col-block">
+                    
+                    <div class="item-entry" data-aos="zoom-in">
+                        <div class="item-entry__thumb">
+                            <a href="single-standard.html" class="item-entry__thumb-link">
+                                <img src="<%= post.image_url(:image_400)%>" 
+                                     srcset="<%= post.image_url(:image_400)%> 1x, <%= post.image_url(:image_900)%> 2x" alt="">
+                            </a>
+                        </div>
+        
+                        <div class="item-entry__text">    
+                            <div class="item-entry__cat">
+                                <a href="category.html"><%=post.genres.first.list%></a> 
+                            </div>
+    
+                            <h1 class="item-entry__title"><a href="single-standard.html"><%=post.title%></a></h1>
+                                
+                            <div class="item-entry__date">
+                                <% d2 = post.date_limite.to_formatted_s(:rfc822) %>
+                                <a href="#0"><%=post.address.capitalize%> <%=d2[5..15] +' à '+ @posts[0].hour%></a>
+                            </div>
+                        </div>
+                    </div> <!-- item-entry -->
+
+                </article> <!-- end article -->
+
+            <% end %><!------------------end each--------------------->
+                
+            </div> <!-- end entries -->
+        </div> <!-- end entries-wrap -->
+
+    </section> <!-- end s-content -->
+
+<%else%>
+    
+    <br><br><br><br><center><h2>Pas d'evenement a afficher</h2></center><br>
+    <center><h2><%= link_to "Connecter", new_user_session_path, style: "color: #15c4d4; font-size: 30px" %> vous pour poster des evenements <br>sur nosyevents</h2></center><br>
+
+<% end %>
+
+
+
+
+
+    <!-- s-foote
+    =========================================================================================================================== -->
+    <footer class="s-footer">
+
+        <div class="s-footer__main">
+            <div class="row">
+                
+                <div class="col-six tab-full s-footer__about">
+                        
+                    <h4>A propos de nosyevents</h4>
+
+                    <p>.....................................................................................
+                        .......................................................................................
+                        .............................................................................................</p>
+
+                </div> <!-- end s-footer__about -->
+
+                <div class="col-six tab-full s-footer__subscribe">
+                        
+                    <h4>Des problemes sur nosyevents?</h4>
+
+                    <p>Envoyer nous un <a href="mailto:nosyevents@gmail.com">Email</a> pour vous aidez a resoudre le probleme</p><br>
+                    <a href="#">Comment utiliser ce site</a><br>
+
+                </div> <!-- end s-footer__subscribe -->
+
+            </div>
+        </div> <!-- end s-footer__main -->
+
+        <div class="s-footer__bottom">
+            <div class="row">
+
+                <div class="col-six">
+                    <ul class="footer-social">
+                        <li>
+                            <a href="#0"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#0"><i class="fab fa-twitter"></i></a>
+                        </li>
+
+                        <li>
+                            <a href="#0"><i class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-six">
+                    <div class="s-footer__copyright">
+                        <span>
+                            Copyright Nosyevents 2020
+
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div> <!-- end s-footer__bottom -->
+
+        <div class="go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top"></a>
+        </div>
+
+    </footer> <!-- end s-footer -->
+):
+1:    	<!-- preloader
+2:        ================================================== -->
+3:        <div id="preloader">
+4:            <div id="loader" class="dots-fade">
+5:                <div></div>
+6:                <div></div>
+7:                <div></div>
+8:            </div>
+9:        </div>
+10:    
+11:    
+12:        <!-- header
+13:        ================================================== -->
+14:        <header class="s-header header">
+15:    
+16:            <div class="header__logo">
+17:                <a class="logo" href="<% root_path %>">
+18:                    <img src="home/images/LOGO.png" alt="Homepage">
+19:                </a>
+20:            </div> <!-- end header__logo -->
+21:    
+22:            <a class="header__search-trigger" href="#"></a>
+23:    
+24:            <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+25:            <nav class="header__nav-wrap">
+26:    
+27:                <h2 class="header__nav-heading h6">Menu</h2>
+28:    
+29:                <ul class="header__nav">
+30:                    <li class="has-children">
+31:                        <a href="#0" title="">Province</a>
+32:                        <ul class="sub-menu">
+33:                        	<li><a href="#">Antananarivo</a></li>
+34:                            <li><a href="#">Antsiranana</a></li>
+35:                            <li><a href="#">Mahajanga</a></li>
+36:                            <li><a href="#">Toamasina</a></li>
+37:                            <li><a href="#">Fianarantsoa</a></li>
+38:                            <li><a href="#">Toliara</a></li>
+39:                        </ul>
+40:                    <li class="has-children">
+41:                        <a href="#0" title="">Tout les evenemets</a>
+42:                        <ul class="sub-menu">
+43:                            <li><a href="#">Sport</a></li>
+44:                            <li><a href="#">Cabaret</a></li>
+45:                            <li><a href="#">Spectacle</a></li>
+46:                            <li><a href="#">Soirée</a></li>
+47:                            <li><a href="#">Festival</a></li>
+48:                            <li><a href="#">Scolaire</a></li>
+49:                            <li><a href="#">Conference</a></li>
+50:                            <li><a href="#">Foire</a></li>
+51:                            <li><a href="#">Salon</a></li>
+52:                            <li><a href="#">Teatre</a></li>
+53:                            <li><a href="#">Evangelique</a></li>
+54:                            <li><a href="#">Balle</a></li>
+55:                        </ul>
+56:                    </li>
+57:    
+58:                    <% if(user_signed_in?) %>
+59:                    <li class="has-children">
+60:                        <%if current_user.image?%>
+61:                            <a href="#0" title=""><img src="<%= current_user.image_url %>" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+62:                        <% else %>
+63:                            <a href="#0" title=""><img src="users/images/user-icon.png" style="border-radius: 100%; width: 25px; height: 25px; margin-bottom: -10px;"></a>
+64:                        <% end %>
+65:                        <ul class="sub-menu">
+66:                            <li><a href="/<%= current_user.username%>"><%= current_user.username.capitalize %></a> </li>
+67:                            <li><a href="<%= posts_path%>">Mes publications</a></li>
+68:                        <li><%= link_to "se deconecter", destroy_user_session_path, method: :delete, style: "color: #DCD850; font-size: 15px" %></li>
+69:                        </ul>
+70:                    </li>
+71:                    <% else %>
+72:                        <li><%= link_to "se connecter", new_user_session_path, style: "color: #15c4d4; font-size: 18px" %></li>
+73:                        <li><%= link_to "s'inscrire", new_user_registration_path(@user), style: "color: #68de4d; font-size: 16px" %></li>
+74:                    <% end %>
+75:    
+76:                </ul>
+77:    
+78:                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+79:    
+80:            </nav>
+81:    
+82:        </header>
+83:    
+84:    <% if @posts? %>
+85:    
+86:        <section class="s-featured">
+87:            <div class="row">
+88:                <div class="col-full">
+89:    
+90:                    <div class="featured-slider featured" data-aos="zoom-in">
+91:    
+92:                        <div class="featured__slide">
+93:                            <div class="entry">
+94:    
+95:                                <div class="entry__background" style="background-image:url('<%= @posts[0].image_url%>');"></div>
+96:                                
+97:                                <div class="entry__content">
+98:                                    <span class="entry__category"><a href="#0"><%=@posts[0].genres.first.list%></a></span>
+99:    
+100:                                    <h1><a href="#0" title=""><%=@posts[0].title%></a></h1>
+101:    
+102:                                    <div class="entry__info">
+103:                                        <a href="/profil/<%=@posts[0].user.username%>" class="entry__profile-pic">
+104:                                            <% if @posts[0].user.image?%>
+105:                                                <img class="avatar" src="<%=@posts[0].user.image_url%>" alt="">
+106:                                            <%else%>
+107:                                                <img class="avatar" src="images/icons/user-icon.png" alt="">
+108:                                            <%end%>                                           
+109:                                        </a>
+110:                                        <ul class="entry__meta">
+111:                                            <li><a href="#0"><%=@posts[0].address.capitalize%></a></li>
+112:                                            <% d0 = @posts[0].date_limite.to_formatted_s(:rfc822) %>
+113:                                            <li><%=d0[5..15] +' à '+ @posts[0].hour%></li>
+114:                                        </ul>
+115:                                    </div>
+116:                                </div> <!-- end entry__content -->
+117:                                
+118:                            </div> <!-- end entry -->
+119:                        </div> <!-- end featured__slide -->
+120:    
+121:                        <div class="featured__slide">
+122:    
+123:                            <div class="entry">
+124:    
+125:                                <div class="entry__background" style="background-image:url('<%= @posts[1].image_url%>');"></div>
+126:                                
+127:                                <div class="entry__content">
+128:                                    <span class="entry__category"><a href="#0"><%=@posts[1].genres.first.list%></a></span>
+129:    
+130:                                    <h1><a href="#0" title=""><%=@posts[1].title%></a></h1>
+131:    
+132:                                    <div class="entry__info">
+133:                                        <a href="/profil/<%=@posts[1].user.username%>" class="entry__profile-pic">
+134:                                            <% if @posts[1].user.image?%>
+135:                                                <img class="avatar" src="<%=@posts[1].user.image_url%>" alt="">
+136:                                            <%else%>
+137:                                                <img class="avatar" src="images/icons/user-icon.png" alt="">
+138:                                            <%end%> 
+139:                                        </a>
+140:    
+141:                                        <ul class="entry__meta">
+142:                                            <li><a href="#0"><%=@posts[1].address.capitalize%></a></li>
+143:                                            <% d1 = @posts[1].date_limite.to_formatted_s(:rfc822) %>
+144:                                            <li><%=d1[5..15] +' à '+ @posts[1].hour%></li>
+145:                                        </ul>
+146:                                    </div>
+147:                                </div> <!-- end entry__content -->
+148:                                
+149:                            </div> <!-- end entry -->
+150:    
+151:                        </div> <!-- end featured__slide -->
+152:    
+153:                        <div class="featured__slide">
+154:    
+155:                            <div class="entry">
+156:    
+157:                                <div class="entry__background" style="background-image:url('<%= @posts[2].image_url%>');"></div>
+158:    
+159:                                <div class="entry__content">
+160:                                    <span class="entry__category"><a href="#0"><%=@posts[2].genres.first.list%></a></span>
+161:    
+162:                                    <h1><a href="#0" title=""><%=@posts[2].title%></a></h1>
+163:    
+164:                                    <div class="entry__info">
+165:                                        <a href="/profil/<%=@posts[2].user.username%>" class="entry__profile-pic">
+166:                                            <% if @posts[2].user.image?%>
+167:                                                <img class="avatar" src="<%=@posts[2].user.image_url%>" alt="">
+168:                                            <%else%>
+169:                                                <img class="avatar" src="images/icons/user-icon.png" alt="">
+170:                                            <%end%> 
+171:                                        </a>
+172:    
+173:                                        <ul class="entry__meta">
+174:                                            <li><a href="#0"><%=@posts[2].address.capitalize%></a></li>
+175:                                            <% d2 = @posts[2].date_limite.to_formatted_s(:rfc822) %>
+176:                                            <li><%=d2[5..15] +' à '+ @posts[2].hour%></li>
+177:                                        </ul>
+178:                                    </div>
+179:                                </div> <!-- end entry__content -->
+180:    
+181:                            </div> <!-- end entry -->
+182:    
+183:                        </div> <!-- end featured__slide -->
+184:                        
+185:                    </div> <!-- end featured -->
+186:    
+187:                </div> <!-- end col-full -->
+188:            </div>
+189:        </section> <!-- end s-featured -->
+190:    
+191:    <!----------------------------------------------------------------------------------------------------------------------->
+192:        <section class="s-content">
+193:            
+194:            <div class="row entries-wrap wide">
+195:                <div class="entries">
+196:    
+197:                    <% @posts.each do |post| %>
+198:    
+199:                    <article class="col-block">
+200:                        
+201:                        <div class="item-entry" data-aos="zoom-in">
+202:                            <div class="item-entry__thumb">
+203:                                <a href="single-standard.html" class="item-entry__thumb-link">
+204:                                    <img src="<%= post.image_url(:image_400)%>" 
+205:                                         srcset="<%= post.image_url(:image_400)%> 1x, <%= post.image_url(:image_900)%> 2x" alt="">
+206:                                </a>
+207:                            </div>
+208:            
+209:                            <div class="item-entry__text">    
+210:                                <div class="item-entry__cat">
+211:                                    <a href="category.html"><%=post.genres.first.list%></a> 
+212:                                </div>
+213:        
+214:                                <h1 class="item-entry__title"><a href="single-standard.html"><%=post.title%></a></h1>
+215:                                    
+216:                                <div class="item-entry__date">
+217:                                    <% d2 = post.date_limite.to_formatted_s(:rfc822) %>
+218:                                    <a href="#0"><%=post.address.capitalize%> <%=d2[5..15] +' à '+ @posts[0].hour%></a>
+219:                                </div>
+220:                            </div>
+221:                        </div> <!-- item-entry -->
+222:    
+223:                    </article> <!-- end article -->
+224:    
+225:                <% end %><!------------------end each--------------------->
+226:                    
+227:                </div> <!-- end entries -->
+228:            </div> <!-- end entries-wrap -->
+229:    
+230:        </section> <!-- end s-content -->
+231:    
+232:    <%else%>
+233:        
+234:        <br><br><br><br><center><h2>Pas d'evenement a afficher</h2></center><br>
+235:        <center><h2><%= link_to "Connecter", new_user_session_path, style: "color: #15c4d4; font-size: 30px" %> vous pour poster des evenements <br>sur nosyevents</h2></center><br>
+236:    
+237:    <% end %>
+238:    
+239:    
+240:    
+241:    
+242:    
+243:        <!-- s-foote
+244:        =========================================================================================================================== -->
+245:        <footer class="s-footer">
+246:    
+247:            <div class="s-footer__main">
+248:                <div class="row">
+249:                    
+250:                    <div class="col-six tab-full s-footer__about">
+251:                            
+252:                        <h4>A propos de nosyevents</h4>
+253:    
+254:                        <p>.....................................................................................
+255:                            .......................................................................................
+256:                            .............................................................................................</p>
+257:    
+258:                    </div> <!-- end s-footer__about -->
+259:    
+260:                    <div class="col-six tab-full s-footer__subscribe">
+261:                            
+262:                        <h4>Des problemes sur nosyevents?</h4>
+263:    
+264:                        <p>Envoyer nous un <a href="mailto:nosyevents@gmail.com">Email</a> pour vous aidez a resoudre le probleme</p><br>
+265:                        <a href="#">Comment utiliser ce site</a><br>
+266:    
+267:                    </div> <!-- end s-footer__subscribe -->
+268:    
+269:                </div>
+270:            </div> <!-- end s-footer__main -->
+271:    
+272:            <div class="s-footer__bottom">
+273:                <div class="row">
+274:    
+275:                    <div class="col-six">
+276:                        <ul class="footer-social">
+277:                            <li>
+278:                                <a href="#0"><i class="fab fa-facebook"></i></a>
+279:                            </li>
+280:                            <li>
+281:                                <a href="#0"><i class="fab fa-twitter"></i></a>
+282:                            </li>
+283:    
+284:                            <li>
+285:                                <a href="#0"><i class="fab fa-youtube"></i></a>
+286:                            </li>
+287:                        </ul>
+288:                    </div>
+289:    
+290:                    <div class="col-six">
+291:                        <div class="s-footer__copyright">
+292:                            <span>
+293:                                Copyright Nosyevents 2020
+294:    
+295:                            </span>
+296:                        </div>
+297:                    </div>
+298:                    
+299:                </div>
+300:            </div> <!-- end s-footer__bottom -->
+301:    
+302:            <div class="go-top">
+303:                <a class="smoothscroll" title="Back to Top" href="#top"></a>
+304:            </div>
+305:    
+306:        </footer> <!-- end s-footer -->
+  
+app/views/home/index.html.erb:95: syntax error, unexpected ';', expecting ':'
+app/views/home/index.html.erb:308: syntax error, unexpected keyword_end, expecting end-of-input
+app/views/home/index.html.erb:95: syntax error, unexpected ';', expecting ':'
+app/views/home/index.html.erb:308: syntax error, unexpected keyword_end, expecting end-of-input
+app/views/home/index.html.erb:95: syntax error, unexpected ';', expecting ':'
+app/views/home/index.html.erb:308: syntax error, unexpected keyword_end, expecting end-of-input
+app/views/home/index.html.erb:95: syntax error, unexpected ';', expecting ':'
+app/views/home/index.html.erb:308: syntax error, unexpected keyword_end, expecting end-of-input
+app/views/home/index.html.erb:95: syntax error, unexpected ';', expecting ':'
+app/views/home/index.html.erb:308: syntax error, unexpected keyword_end, expecting end-of-input
+app/views/home/index.html.erb:95: syntax error, unexpected ';', expecting ':'
+app/views/home/index.html.erb:308: syntax error, unexpected keyword_end, expecting end-of-input
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPost Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-07-10 23:09:07 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:84
+  Rendered home/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 2461)
+Completed 200 OK in 91ms (Views: 87.8ms | ActiveRecord: 1.2ms | Allocations: 9963)
+
+

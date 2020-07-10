@@ -110,8 +110,7 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-
-        config.action_mailer.delivery_method = :smtp
+      config.action_mailer.delivery_method = :smtp
 
       config.action_mailer.perform_deliveries = true
 
@@ -123,8 +122,8 @@ Rails.application.configure do
         address:              'smtp.gmail.com',
         port:                  587,
         domain:               'gmail.com',
-        user_name:            'franklinrazafy@gmail.com',
-        password:             'franklin15',
+        user_name:            ENV["email"],
+        password:             ENV["pass"],
         authentication:       'plain'
       }
 
