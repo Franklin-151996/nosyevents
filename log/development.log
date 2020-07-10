@@ -46464,3 +46464,186 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 91ms (Views: 87.8ms | ActiveRecord: 1.2ms | Allocations: 9963)
 
 
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (838.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_development"[0m
+  [1m[35m (334.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_test"[0m
+  [1m[35m (1043.6ms)[0m  [1m[35mCREATE DATABASE "nosyevents_development" ENCODING = 'unicode'[0m
+  [1m[35m (1291.4ms)[0m  [1m[35mCREATE DATABASE "nosyevents_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "DeviseMailer_dev"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "DeviseMailer_test"[0m
+  [1m[35m (1213.9ms)[0m  [1m[35mCREATE DATABASE "DeviseMailer_dev" ENCODING = 'unicode'[0m
+  [1m[35m (983.4ms)[0m  [1m[35mCREATE DATABASE "DeviseMailer_test" ENCODING = 'unicode'[0m
+  [1m[35m (335.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_development"[0m
+  [1m[35m (330.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_test"[0m
+  [1m[35m (975.4ms)[0m  [1m[35mCREATE DATABASE "nosyevents_development" ENCODING = 'unicode'[0m
+  [1m[35m (1084.1ms)[0m  [1m[35mCREATE DATABASE "nosyevents_test" ENCODING = 'unicode'[0m
+  [1m[35m (360.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_development"[0m
+  [1m[35m (239.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_test"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_development"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_test"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_development"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "nosyevents_test"[0m
+  [1m[35m (1080.4ms)[0m  [1m[35mCREATE DATABASE "nosyevents_development" ENCODING = 'unicode'[0m
+  [1m[35m (1001.1ms)[0m  [1m[35mCREATE DATABASE "nosyevents_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins" CASCADE[0m
+  [1m[35m (100.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "username" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (57.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  [1m[35m (48.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "cities" CASCADE[0m
+  [1m[35m (126.6ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "ville" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  [1m[35m (100.0ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "list" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres_posts" CASCADE[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "genres_posts" ("genre_id" bigint, "post_id" bigint)[0m
+  [1m[35m (40.7ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_genre_id" ON "genres_posts"  ("genre_id")[0m
+  [1m[35m (48.5ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_post_id" ON "genres_posts"  ("post_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (91.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "address" character varying, "date_limite" timestamp, "hour" character varying, "description" text, "price" character varying, "payer" boolean DEFAULT FALSE, "image" character varying, "user_id" bigint, "city_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (48.0ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_city_id" ON "posts"  ("city_id")[0m
+  [1m[35m (47.7ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_user_id" ON "posts"  ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (107.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "image" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (48.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (48.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (92.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200701215222)[0m
+  [1m[35m (6.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200701214827),
+(20200701214852),
+(20200701215136),
+(20200701215145),
+(20200701215154);
+
+[0m
+  [1m[35m (98.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-10 22:10:59.311103"], ["updated_at", "2020-07-10 22:10:59.311103"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "448ff9d691d2379aaeff98f6bd195c4a1851d4d5"], ["created_at", "2020-07-10 22:10:59.346889"], ["updated_at", "2020-07-10 22:10:59.346889"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins" CASCADE[0m
+  [1m[35m (178.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "username" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (57.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  [1m[35m (70.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "cities" CASCADE[0m
+  [1m[35m (114.7ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "ville" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  [1m[35m (97.7ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "list" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres_posts" CASCADE[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "genres_posts" ("genre_id" bigint, "post_id" bigint)[0m
+  [1m[35m (69.8ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_genre_id" ON "genres_posts"  ("genre_id")[0m
+  [1m[35m (59.2ms)[0m  [1m[35mCREATE  INDEX  "index_genres_posts_on_post_id" ON "genres_posts"  ("post_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (124.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "address" character varying, "date_limite" timestamp, "hour" character varying, "description" text, "price" character varying, "payer" boolean DEFAULT FALSE, "image" character varying, "user_id" bigint, "city_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (50.5ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_city_id" ON "posts"  ("city_id")[0m
+  [1m[35m (59.6ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_user_id" ON "posts"  ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (91.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "image" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (45.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (42.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (117.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200701215222)[0m
+  [1m[35m (8.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200701214827),
+(20200701214852),
+(20200701215136),
+(20200701215145),
+(20200701215154);
+
+[0m
+  [1m[35m (117.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-10 22:11:00.923553"], ["updated_at", "2020-07-10 22:11:00.923553"]]
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-07-10 22:11:00.956716"], ["key", "environment"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "448ff9d691d2379aaeff98f6bd195c4a1851d4d5"], ["created_at", "2020-07-10 22:11:00.991632"], ["updated_at", "2020-07-10 22:11:00.991632"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (1.3ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "ANTANANARIVO"], ["created_at", "2020-07-10 22:11:01.141461"], ["updated_at", "2020-07-10 22:11:01.141461"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "MAHAJANGA"], ["created_at", "2020-07-10 22:11:01.161100"], ["updated_at", "2020-07-10 22:11:01.161100"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "TOAMASINA"], ["created_at", "2020-07-10 22:11:01.194531"], ["updated_at", "2020-07-10 22:11:01.194531"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.9ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "ANTSIRANANA"], ["created_at", "2020-07-10 22:11:01.216786"], ["updated_at", "2020-07-10 22:11:01.216786"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "FIANARANTSOA"], ["created_at", "2020-07-10 22:11:01.238916"], ["updated_at", "2020-07-10 22:11:01.238916"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("ville", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ville", "TOLIARA"], ["created_at", "2020-07-10 22:11:01.261260"], ["updated_at", "2020-07-10 22:11:01.261260"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.4ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "sport"], ["created_at", "2020-07-10 22:11:01.317343"], ["updated_at", "2020-07-10 22:11:01.317343"]]
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "course"], ["created_at", "2020-07-10 22:11:01.338947"], ["updated_at", "2020-07-10 22:11:01.338947"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "spectacle"], ["created_at", "2020-07-10 22:11:01.361919"], ["updated_at", "2020-07-10 22:11:01.361919"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.2ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "concert"], ["created_at", "2020-07-10 22:11:01.383468"], ["updated_at", "2020-07-10 22:11:01.383468"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.3ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "cabaret"], ["created_at", "2020-07-10 22:11:01.406576"], ["updated_at", "2020-07-10 22:11:01.406576"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.1ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "soirée"], ["created_at", "2020-07-10 22:11:01.428372"], ["updated_at", "2020-07-10 22:11:01.428372"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "diner dansant"], ["created_at", "2020-07-10 22:11:01.450138"], ["updated_at", "2020-07-10 22:11:01.450138"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "balle"], ["created_at", "2020-07-10 22:11:01.472391"], ["updated_at", "2020-07-10 22:11:01.472391"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "scolaire"], ["created_at", "2020-07-10 22:11:01.494928"], ["updated_at", "2020-07-10 22:11:01.494928"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "festival"], ["created_at", "2020-07-10 22:11:01.517073"], ["updated_at", "2020-07-10 22:11:01.517073"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "foire"], ["created_at", "2020-07-10 22:11:01.539399"], ["updated_at", "2020-07-10 22:11:01.539399"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "salon"], ["created_at", "2020-07-10 22:11:01.561433"], ["updated_at", "2020-07-10 22:11:01.561433"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "teatre"], ["created_at", "2020-07-10 22:11:01.583716"], ["updated_at", "2020-07-10 22:11:01.583716"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "conference"], ["created_at", "2020-07-10 22:11:01.606283"], ["updated_at", "2020-07-10 22:11:01.606283"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("list", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list", "evangelique"], ["created_at", "2020-07-10 22:11:01.628187"], ["updated_at", "2020-07-10 22:11:01.628187"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPost Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m

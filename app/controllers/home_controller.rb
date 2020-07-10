@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 	
 	def index
 		@posts = Post.all
+		@test = Post.all.count
 	end
 
 	def destroy
