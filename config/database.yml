@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  host: localhost
   database: nosyevents_production
   username: nosyevents
   password: <%= ENV['NOSYEVENT_DATABASE_PASSWORD'] %>
