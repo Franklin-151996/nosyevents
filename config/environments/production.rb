@@ -127,5 +127,5 @@ Rails.application.configure do
         password:             'franklin15',
         authentication:       'plain'
       }
-  end
+
 end
